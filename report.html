@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>사업보고 — 사단법인 유스보이스</title>
+<meta name="description" content="사단법인 유스보이스의 사업보고서, 공익법인 결산서류 공시, 기부금 활용 실적 등 투명한 운영 자료를 확인하세요." />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="유스보이스 YouthVoice" />
+<meta property="og:title" content="사업보고 — 사단법인 유스보이스" />
+<meta property="og:description" content="공익법인 유스보이스의 사업보고서와 결산서류, 기부금 활용 실적을 투명하게 공개합니다." />
+<meta property="og:url" content="https://youthvoice.or.kr/report.html" />
+<meta property="og:image" content="https://youthvoice.or.kr/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="style.css?v=20260803t" />
+<style>
+/* ===== 사업보고 페이지 전용 ===== */
+.report-hero {
+  padding: 96px 0 72px;
+  background:
+    radial-gradient(560px 380px at 85% 20%, var(--blue-soft) 0%, transparent 70%),
+    #fff;
+}
+.report-hero h1 {
+  font-size: clamp(34px, 4.2vw, 54px);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  word-break: keep-all;
+}
+.report-hero p {
+  margin-top: 24px;
+  font-size: 17.5px;
+  color: var(--gray-600);
+  max-width: 640px;
+}
+
+.report-filters {
+  margin-top: 48px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.report-filters button {
+  font: inherit;
+  font-size: 14.5px;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1.5px solid var(--gray-300);
+  background: #fff;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.report-filters button:hover { border-color: var(--blue); color: var(--blue); }
+.report-filters button.is-active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+
+.report-list {
+  margin-top: 28px;
+  list-style: none;
+  border-top: 1.5px solid var(--ink);
+}
+.report-list li { border-bottom: 1px solid var(--gray-300); }
+.report-list a {
+  display: grid;
+  grid-template-columns: 90px 110px 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 26px 8px;
+  transition: background 0.2s;
+}
+.report-list a:hover { background: var(--gray-100); }
+.report-list .year { font-size: 15px; font-weight: 800; color: var(--ink); }
+.report-list .cat {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--blue);
+  background: var(--blue-soft);
+  border-radius: 999px;
+  padding: 5px 12px;
+  text-align: center;
+  white-space: nowrap;
+}
+.report-list strong {
+  font-size: 16.5px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.5;
+}
+.report-list a:hover strong { text-decoration: underline; text-underline-offset: 4px; }
+.report-list .dl { font-size: 14px; font-weight: 700; color: var(--gray-600); white-space: nowrap; }
+.report-list a:hover .dl { color: var(--blue); }
+
+.report-empty {
+  margin-top: 28px;
+  border: 1.5px dashed var(--gray-300);
+  border-radius: var(--radius);
+  padding: 72px 24px;
+  text-align: center;
+  color: var(--gray-600);
+}
+.report-empty strong { display: block; font-size: 18px; color: var(--ink); margin-bottom: 8px; }
+
+@media (max-width: 900px) {
+  .report-list a { grid-template-columns: 1fr; gap: 8px; padding: 22px 4px; }
+  .report-list .cat { justify-self: start; }
+}
+</style>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<!-- ===== Header ===== -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="index.html" class="header__logo">
+      <img src="assets/logo_yv.png" alt="YouthVoice 유스보이스" />
+    </a>
+    <nav class="header__nav" id="nav">
+      <div class="nav-drop">
+        <a href="index.html#youthit">유스-잇 커뮤니티</a>
+        <div class="nav-drop__menu">
+          <a href="https://youthitdev.github.io/youthit-routine/landing.html" target="_blank" rel="noopener">한끗루틴</a>
+          <a href="tmi.html">TMI 프로젝트</a>
+          <a href="index.html#youthit">월간소모임</a>
+        </div>
+      </div>
+      <div class="nav-drop">
+        <a href="index.html#partnership">파트너십</a>
+        <div class="nav-drop__menu">
+          <a href="index.html#partnership">협력 모델</a>
+          <a href="youth-creator.html">기금 사업 사례</a>
+        </div>
+      </div>
+      <a href="index.html#adults">함께하는 어른</a>
+      <div class="nav-drop">
+        <a href="index.html#voices">이야기</a>
+        <div class="nav-drop__menu">
+          <a href="https://brunch.co.kr/brunchbook/youthtimes" target="_blank" rel="noopener">인터뷰 매거진</a>
+        </div>
+      </div>
+      <div class="nav-drop">
+        <a href="about.html">단체소개</a>
+        <div class="nav-drop__menu">
+          <a href="about.html">소개</a>
+          <a href="report.html">사업보고</a>
+        </div>
+      </div>
+    </nav>
+    <div class="header__actions">
+      <a href="index.html#donate" class="btn btn--primary btn--sm">후원하기</a>
+      <button class="header__menu-btn" id="menuBtn" aria-label="메뉴 열기">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<!-- ===== Hero ===== -->
+<section class="report-hero">
+  <div class="container">
+    <span class="pill pill--blue reveal">BUSINESS REPORT</span>
+    <h1 class="reveal delay-1">투명하게 기록하고,<br />정직하게 보고합니다</h1>
+    <p class="reveal delay-2">
+      유스보이스는 공익법인(지정기부금단체)으로서 사업보고서와 결산서류,
+      기부금 활용 실적을 투명하게 공개합니다.
+    </p>
+  </div>
+</section>
+
+<!-- ===== 자료 목록 ===== -->
+<section class="section" style="padding-top: 0" id="reports">
+  <div class="container">
+    <div class="report-filters reveal" id="reportFilters"></div>
+    <ul class="report-list" id="reportList"></ul>
+    <div class="report-empty" id="reportEmpty" hidden>
+      <strong>자료를 준비하고 있어요</strong>
+      공시 자료가 등록되면 이곳에서 확인하실 수 있습니다.
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="container footer__row">
+    <div class="footer__col-left">
+      <img class="footer__logo" src="assets/logo_yv.png" alt="YouthVoice" />
+      <div class="footer__legal-cols">
+        <div class="footer__legal-col">
+          <p>사단법인 유스보이스 | 대표 김재순</p>
+          <p>개인정보관리책임자 김재순 | 사업자등록번호 116-82-39766</p>
+          <p>(우) 04768, 서울 성동구 뚝섬로1나길 5, 6층</p>
+        </div>
+        <div class="footer__legal-col">
+          <p>후원계좌 : 신한은행 100-034-871213 (사)유스보이스</p>
+          <p>TEL : (02) 6261-0533 | FAX : (02) 2261-1572</p>
+          <p>E-mail : <a href="mailto:yv@youthvoice.or.kr">yv@youthvoice.or.kr</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="footer__col-right">
+      <div class="footer__social-row">
+        <a class="footer__social" href="https://www.instagram.com/youthvoice_my/" target="_blank" rel="noopener" aria-label="유스보이스 인스타그램 바로가기">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a class="footer__social" href="https://www.facebook.com/youthvoicelab" target="_blank" rel="noopener" aria-label="유스보이스 페이스북 바로가기">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          </svg>
+        </a>
+      </div>
+      <div class="footer__links">
+        <a href="assets/brand/유스보이스-CI가이드.ai" download>유스보이스 CI 다운로드</a>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="https://www.nts.go.kr/nts/main.do" target="_blank" rel="noopener" class="footer__whistle">공익제보 바로가기 <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="footer__copy">© YouthVoice. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js?v=20260803t"></script>
+</body>
+</html>

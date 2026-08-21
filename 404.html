@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>페이지를 찾을 수 없어요 — 유스보이스</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="style.css?v=20260803t" />
+<style>
+.notfound {
+  min-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 96px 24px;
+}
+.notfound__logo { height: 28px; width: auto; margin-bottom: 56px; }
+.notfound__code {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--lime-dark);
+  letter-spacing: 0.12em;
+}
+.notfound h1 {
+  margin-top: 16px;
+  font-size: clamp(26px, 3.4vw, 38px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.notfound p {
+  margin-top: 14px;
+  font-size: 16px;
+  color: var(--gray-600);
+}
+.notfound__links {
+  margin-top: 32px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+</style>
+</head>
+<body>
+<main id="main">
+  <section class="notfound">
+    <a href="index.html"><img class="notfound__logo" src="assets/logo_yv.png" alt="YouthVoice 유스보이스" /></a>
+    <span class="notfound__code">404</span>
+    <h1>페이지를 찾을 수 없어요</h1>
+    <p>주소가 바뀌었거나 삭제된 페이지예요. 아래에서 찾으시는 내용을 확인해보세요.</p>
+    <div class="notfound__links">
+      <a href="index.html" class="btn btn--dark">홈으로 가기</a>
+      <a href="index.html#youthit" class="btn btn--ghost">유스-잇 커뮤니티</a>
+      <a href="mailto:soon@youthvoice.or.kr" class="btn btn--ghost">문의하기</a>
+    </div>
+  </section>
+</main>
+</body>
+</html>

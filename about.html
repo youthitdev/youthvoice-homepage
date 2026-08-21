@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>단체소개 — 사단법인 유스보이스</title>
+<meta name="description" content="유스보이스는 2002년부터 청소년이 미디어로 자기 목소리를 발견하고 표현하도록 지원해온 사단법인입니다. 미션, 비전, 연혁, 이사진을 소개합니다." />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="유스보이스 YouthVoice" />
+<meta property="og:title" content="단체소개 — 사단법인 유스보이스" />
+<meta property="og:description" content="2002년부터 청소년의 나다움을 지지해온 유스보이스의 미션, 비전, 연혁을 소개합니다." />
+<meta property="og:url" content="https://youthvoice.or.kr/about.html" />
+<meta property="og:image" content="https://youthvoice.or.kr/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="style.css?v=20260803t" />
+<style>
+/* ===== 소개 페이지 전용 ===== */
+.about-hero {
+  padding: 96px 0;
+  background:
+    radial-gradient(560px 380px at 85% 20%, var(--lime-soft) 0%, transparent 70%),
+    radial-gradient(420px 320px at 10% 90%, var(--pink-soft) 0%, transparent 70%),
+    #fff;
+}
+.about-hero h1 {
+  font-size: clamp(34px, 4.2vw, 54px);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  word-break: keep-all;
+}
+.about-hero h1 em {
+  font-style: normal;
+  background: linear-gradient(transparent 58%, rgba(141, 198, 63, 0.5) 58%);
+}
+.about-hero p {
+  margin-top: 24px;
+  font-size: 17.5px;
+  color: var(--gray-600);
+  max-width: 640px;
+}
+
+.mission-card {
+  margin-top: 56px;
+  background: var(--lime-dark);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 56px 52px;
+}
+.mission-card .label {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--lime);
+}
+.mission-card p {
+  margin-top: 18px;
+  font-size: clamp(19px, 2.2vw, 25px);
+  font-weight: 700;
+  line-height: 1.65;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+}
+.visions {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.timeline {
+  margin-top: 56px;
+  list-style: none;
+  border-left: 2px solid var(--gray-300);
+  padding-left: 32px;
+  max-width: 720px;
+}
+.timeline li { position: relative; padding-bottom: 32px; }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -39px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--lime);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px var(--lime);
+}
+.timeline__year {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--lime-dark);
+  letter-spacing: 0.04em;
+}
+.timeline h4 { margin-top: 4px; font-size: 18px; font-weight: 800; letter-spacing: -0.02em; }
+.timeline p { margin-top: 4px; font-size: 14.5px; color: var(--gray-600); }
+
+.board {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.board__member {
+  background: #fff;
+  border: 1.5px solid var(--gray-100);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  text-align: center;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.board__member:hover { border-color: var(--lime); transform: translateY(-4px); }
+.board__member .role { font-size: 12.5px; font-weight: 700; color: var(--gray-600); }
+.board__member h4 { margin-top: 6px; font-size: 19px; font-weight: 800; }
+.board__member p { margin-top: 4px; font-size: 13.5px; color: var(--gray-600); }
+
+.awards {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.award {
+  background: var(--gray-100);
+  border-radius: var(--radius);
+  padding: 40px 36px;
+}
+.award__emoji { font-size: 36px; display: block; }
+.award h4 { margin-top: 16px; font-size: 21px; font-weight: 800; letter-spacing: -0.02em; }
+.award p { margin-top: 8px; font-size: 15px; color: var(--gray-600); }
+
+@media (max-width: 900px) {
+  .mission-card { padding: 40px 28px; }
+  .visions { grid-template-columns: 1fr; }
+  .board { grid-template-columns: repeat(2, 1fr); }
+  .awards { grid-template-columns: 1fr; }
+}
+</style>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<!-- ===== Header ===== -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="index.html" class="header__logo">
+      <img src="assets/logo_yv.png" alt="YouthVoice 유스보이스" />
+    </a>
+    <nav class="header__nav" id="nav">
+      <div class="nav-drop">
+        <a href="index.html#youthit">유스-잇 커뮤니티</a>
+        <div class="nav-drop__menu">
+          <a href="https://youthitdev.github.io/youthit-routine/landing.html" target="_blank" rel="noopener">한끗루틴</a>
+          <a href="tmi.html">TMI 프로젝트</a>
+          <a href="index.html#youthit">월간소모임</a>
+        </div>
+      </div>
+      <div class="nav-drop">
+        <a href="index.html#partnership">파트너십</a>
+        <div class="nav-drop__menu">
+          <a href="index.html#partnership">협력 모델</a>
+          <a href="youth-creator.html">기금 사업 사례</a>
+        </div>
+      </div>
+      <a href="index.html#adults">함께하는 어른</a>
+      <div class="nav-drop">
+        <a href="index.html#voices">이야기</a>
+        <div class="nav-drop__menu">
+          <a href="https://brunch.co.kr/brunchbook/youthtimes" target="_blank" rel="noopener">인터뷰 매거진</a>
+        </div>
+      </div>
+      <div class="nav-drop">
+        <a href="about.html">단체소개</a>
+        <div class="nav-drop__menu">
+          <a href="about.html">소개</a>
+          <a href="report.html">사업보고</a>
+        </div>
+      </div>
+    </nav>
+    <div class="header__actions">
+      <a href="index.html#donate" class="btn btn--primary btn--sm">후원하기</a>
+      <button class="header__menu-btn" id="menuBtn" aria-label="메뉴 열기">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<!-- ===== Hero ===== -->
+<section class="about-hero">
+  <div class="container">
+    <span class="pill pill--lime reveal">ABOUT US</span>
+    <h1 class="reveal delay-1">청소년의 나다움을 지지하는<br /><em>매니지먼트, 유스보이스</em></h1>
+    <p class="reveal delay-2">
+      유스보이스는 2002년 다음세대재단의 청소년 교육사업으로 출발해, 청소년이 하고 싶은
+      이야기를 미디어로 표현하는 경험을 통해 스스로 나다움을 찾을 수 있도록 지원해왔습니다.
+      2020년에는 비영리스타트업(사단법인)으로 새롭게 시작해, 다양한 환경에 있는 청소년의
+      나다움을 지원하고, 학교 밖 청소년을 잇는 커뮤니티 '유스-잇'을 만들어가고 있습니다.
+    </p>
+  </div>
+</section>
+
+<!-- ===== 미션 · 비전 ===== -->
+<section class="section" id="mission">
+  <div class="container">
+    <span class="pill pill--lime reveal">MISSION &amp; VISION</span>
+    <div class="section__head reveal">
+      <h2 class="section__title">다양한 삶이 존중받는<br />건강한 사회를 만듭니다</h2>
+    </div>
+
+    <div class="mission-card reveal">
+      <span class="label">MISSION</span>
+      <p>
+        유스보이스는 나다운 삶을 살지 못하는 청소년에게 차별 없이 자기 목소리를 발견하고
+        표현하며 상호공감할 수 있는 미디어 교육 프로그램과 환경을 제공함으로써
+        다양한 삶이 존중받는 건강한 사회를 만듭니다.
+      </p>
+    </div>
+
+    <div class="visions">
+      <div class="join reveal">
+        <span class="join__emoji">🧭</span>
+        <h3>나다움을 찾는 여정</h3>
+        <p>다양한 환경에 있는 청소년에게 나다움을 찾는 여정과 성장의 기회를 지원합니다.</p>
+      </div>
+      <div class="join reveal delay-1">
+        <span class="join__emoji">💛</span>
+        <h3>곁을 지키는 어른</h3>
+        <p>청소년의 곁에서 진심으로 함께하며 지지하는 어른과 함께합니다.</p>
+      </div>
+      <div class="join reveal delay-2">
+        <span class="join__emoji">🤝</span>
+        <h3>연결되는 커뮤니티</h3>
+        <p>청소년이 안전하게 자신의 목소리를 내고, 서로의 가치로 연결되는 소속감 있는 커뮤니티를 만듭니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 연혁 ===== -->
+<section class="section section--gray" id="history">
+  <div class="container">
+    <span class="pill pill--lime reveal">HISTORY</span>
+    <div class="section__head reveal">
+      <h2 class="section__title">2002년부터 이어온<br />청소년과의 시간</h2>
+    </div>
+    <ul class="timeline reveal">
+      <li>
+        <span class="timeline__year">2026</span>
+        <h4>제7회 대한민국 체인지메이커 '교육' 분야 수상</h4>
+      </li>
+      <li>
+        <span class="timeline__year">2025 ~ 현재</span>
+        <h4>학교 밖 청소년 커뮤니티 '유스-잇' 운영</h4>
+        <p>한끗루틴 · TMI 프로젝트 · 월간소모임으로 매일의 성장을 함께합니다.</p>
+      </li>
+      <li>
+        <span class="timeline__year">2021 ~ 현재</span>
+        <h4>자아탐색 창작 지원사업 'TMI 프로젝트' 운영</h4>
+      </li>
+      <li>
+        <span class="timeline__year">2021. 02</span>
+        <h4>브라이언(카카오) 임팩트 펠로우십 선정</h4>
+      </li>
+      <li>
+        <span class="timeline__year">2021. 01</span>
+        <h4>공익법인(지정기부금단체) 지정</h4>
+        <p>지정기부금단체로 지정되어 투명한 기부 문화에 함께합니다.</p>
+      </li>
+      <li>
+        <span class="timeline__year">2020 ~ 현재</span>
+        <h4>파트너십 프로그램 운영</h4>
+        <p>SM엔터테인먼트, 다음세대재단, 카카오임팩트, 아름다운가게, 아모레퍼시픽, KT&amp;G장학재단, 서울시교육청 고척도서관 등과 함께했습니다.</p>
+      </li>
+      <li>
+        <span class="timeline__year">2020. 09</span>
+        <h4>사단법인 유스보이스 설립</h4>
+      </li>
+      <li>
+        <span class="timeline__year">2002 ~ 2020</span>
+        <h4>다음세대재단 청소년 교육사업 '유스보이스' 운영</h4>
+        <p>청소년 미디어 교육의 뿌리가 된 18년입니다.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 이사진 ===== -->
+<section class="section" id="board">
+  <div class="container">
+    <span class="pill pill--lime reveal">BOARD</span>
+    <div class="section__head reveal">
+      <h2 class="section__title">함께 하는 사람들</h2>
+    </div>
+    <div class="board">
+      <div class="board__member reveal">
+        <span class="role">대표이사</span>
+        <h4>김재순</h4>
+        <p>(사)유스보이스 대표</p>
+      </div>
+      <div class="board__member reveal delay-1">
+        <span class="role">이사</span>
+        <h4>김민섭</h4>
+        <p>작가</p>
+      </div>
+      <div class="board__member reveal delay-1">
+        <span class="role">이사</span>
+        <h4>김태황</h4>
+        <p>교육기획자</p>
+      </div>
+      <div class="board__member reveal delay-2">
+        <span class="role">이사</span>
+        <h4>조은정</h4>
+        <p>라이브러리 티티섬 관장</p>
+      </div>
+      <div class="board__member reveal delay-2">
+        <span class="role">이사</span>
+        <h4>한선경</h4>
+        <p>씨닷 대표</p>
+      </div>
+      <div class="board__member reveal delay-2">
+        <span class="role">감사</span>
+        <h4>박대호</h4>
+        <p>서화회계법인 대표이사</p>
+      </div>
+    </div>
+
+    <div class="awards">
+      <div class="award reveal">
+        <span class="award__emoji">🏅</span>
+        <h4>브라이언(카카오) 임팩트 펠로우십 1기</h4>
+        <p>브라이언임팩트재단이 주목한 교육혁신 — #교육혁신 #다음세대 #미디어</p>
+      </div>
+      <div class="award reveal delay-1">
+        <span class="award__emoji">🏆</span>
+        <h4>제7회 대한민국 체인지메이커 '교육' 분야 수상</h4>
+        <p>한국서부발전 · 한국사회복지협의회가 선정한 사회를 바꾸는 교육</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="donate" id="join">
+  <div class="container donate__inner reveal">
+    <span class="donate__emoji">✦</span>
+    <h2>청소년의 나다움을 지지하는 여정에<br />당신도 함께해 주세요</h2>
+    <a href="index.html#adults" class="btn btn--light">함께하는 방법 보기</a>
+  </div>
+</section>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="container footer__row">
+    <div class="footer__col-left">
+      <img class="footer__logo" src="assets/logo_yv.png" alt="YouthVoice" />
+      <div class="footer__legal-cols">
+        <div class="footer__legal-col">
+          <p>사단법인 유스보이스 | 대표 김재순</p>
+          <p>개인정보관리책임자 김재순 | 사업자등록번호 116-82-39766</p>
+          <p>(우) 04768, 서울 성동구 뚝섬로1나길 5, 6층</p>
+        </div>
+        <div class="footer__legal-col">
+          <p>후원계좌 : 신한은행 100-034-871213 (사)유스보이스</p>
+          <p>TEL : (02) 6261-0533 | FAX : (02) 2261-1572</p>
+          <p>E-mail : <a href="mailto:yv@youthvoice.or.kr">yv@youthvoice.or.kr</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="footer__col-right">
+      <div class="footer__social-row">
+        <a class="footer__social" href="https://www.instagram.com/youthvoice_my/" target="_blank" rel="noopener" aria-label="유스보이스 인스타그램 바로가기">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a class="footer__social" href="https://www.facebook.com/youthvoicelab" target="_blank" rel="noopener" aria-label="유스보이스 페이스북 바로가기">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          </svg>
+        </a>
+      </div>
+      <div class="footer__links">
+        <a href="assets/brand/유스보이스-CI가이드.ai" download>유스보이스 CI 다운로드</a>
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="https://www.nts.go.kr/nts/main.do" target="_blank" rel="noopener" class="footer__whistle">공익제보 바로가기 <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="footer__copy">© YouthVoice. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js?v=20260803t"></script>
+</body>
+</html>
