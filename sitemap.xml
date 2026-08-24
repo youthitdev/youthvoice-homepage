@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://youthvoice.or.kr/routine.html</loc>
+    <lastmod>2026-08-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://youthvoice.or.kr/tmi.html</loc>
     <lastmod>2026-08-03</lastmod>
     <priority>0.8</priority>
