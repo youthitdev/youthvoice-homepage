@@ -331,15 +331,12 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
 }
 .partners-strip__logos img {
-  height: 30px;
+  height: 40px;
   width: auto;
-  opacity: 0.65;
-  filter: grayscale(1);
-  transition: opacity 0.2s, filter 0.2s;
+  transition: transform 0.2s;
 }
 .partners-strip__logos img:hover {
-  opacity: 1;
-  filter: grayscale(0);
+  transform: translateY(-2px);
 }
 
 /* ===== Sections ===== */
@@ -977,7 +974,7 @@ a { color: inherit; text-decoration: none; }
   .sub-title { margin-top: 64px; }
   .partner-cta { padding: 36px 28px; }
   .partners-strip__logos { gap: 14px 24px; }
-  .partners-strip__logos img { height: 24px; }
+  .partners-strip__logos img { height: 30px; }
   .program { min-height: 0; }
   .newsletter__inner { flex-direction: column; align-items: stretch; gap: 28px; }
   .newsletter__text, .newsletter__form { flex: none; }
