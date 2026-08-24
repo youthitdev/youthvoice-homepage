@@ -65,7 +65,6 @@
 .routine-why { margin-top: 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .routine-why .join { text-align: left; }
 
-.routine-features { margin-top: 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .routine-feature {
   background: #fff;
   border: 1.5px solid var(--gray-100);
@@ -78,6 +77,100 @@
 .routine-feature h4 { margin-top: 14px; font-size: 19px; font-weight: 800; letter-spacing: -0.02em; }
 .routine-feature p { margin-top: 8px; font-size: 14.5px; color: var(--gray-600); }
 
+/* 기능 상세 블록 (텍스트 + 실제 화면 목업) */
+.routine-block {
+  margin-top: 72px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.routine-block:first-child { margin-top: 24px; }
+.routine-block--reverse .routine-block__text { order: 2; }
+.routine-block__label {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--lime-dark);
+  letter-spacing: 0.1em;
+}
+.routine-block h3 { margin-top: 10px; font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.4; word-break: keep-all; }
+.routine-block p { margin-top: 12px; font-size: 15.5px; color: var(--gray-600); }
+
+/* 공통 목업 프레임 */
+.routine-mock {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 50px rgba(23, 33, 14, 0.12);
+  padding: 26px;
+  border: 1.5px solid var(--gray-100);
+}
+.routine-mock__head {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--lime-dark);
+  background: var(--lime-soft);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+/* 인증 피드 목업 */
+.routine-feed { list-style: none; display: grid; gap: 14px; }
+.routine-feed li { border-bottom: 1px solid var(--gray-100); padding-bottom: 14px; }
+.routine-feed li:last-child { border-bottom: none; padding-bottom: 0; }
+.routine-feed strong { font-size: 14.5px; font-weight: 800; }
+.routine-feed em { font-style: normal; font-size: 12.5px; color: var(--gray-600); margin-left: 4px; }
+.routine-feed p { margin: 4px 0 0; font-size: 14px; color: var(--ink); }
+.routine-feed span { display: block; margin-top: 6px; font-size: 12.5px; color: var(--gray-600); }
+
+/* 인증 달력 목업 */
+.routine-cal__grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; text-align: center; }
+.routine-cal__grid .dow { font-size: 12px; font-weight: 700; color: var(--gray-600); padding-bottom: 6px; }
+.routine-cal__day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 12.5px;
+  color: var(--gray-600);
+}
+.routine-cal__day.is-done { background: var(--lime); color: #fff; font-weight: 800; }
+.routine-cal__day.is-today { border: 2px solid var(--lime-dark); font-weight: 800; color: var(--ink); }
+.routine-cal__legend { margin-top: 16px; display: flex; gap: 16px; font-size: 12.5px; color: var(--gray-600); }
+.routine-cal__legend span { display: inline-flex; align-items: center; gap: 6px; }
+.routine-cal__legend i { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+.routine-cal__legend i.done { background: var(--lime); }
+.routine-cal__legend i.today { border: 2px solid var(--lime-dark); }
+
+/* 끗짱 대시보드 목업 */
+.routine-dash__row { margin-bottom: 16px; }
+.routine-dash__row:last-child { margin-bottom: 0; }
+.routine-dash__label { display: flex; justify-content: space-between; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.routine-dash__bar { height: 10px; border-radius: 999px; background: var(--gray-100); overflow: hidden; }
+.routine-dash__bar i { display: block; height: 100%; background: var(--lime); border-radius: 999px; }
+.routine-dash__letter { margin-top: 18px; background: var(--lime-soft); border-radius: 14px; padding: 14px 16px; }
+.routine-dash__letter strong { display: block; font-size: 13px; margin-bottom: 4px; }
+.routine-dash__letter p { margin: 0; font-size: 13.5px; color: var(--ink); }
+
+/* AI 루틴 리포트 목업 */
+.routine-ai__block { font-size: 14px; color: var(--gray-600); line-height: 1.7; }
+.routine-ai__block strong { display: block; font-size: 14.5px; color: var(--ink); margin-bottom: 6px; }
+.routine-ai__books { margin-top: 18px; display: grid; gap: 12px; }
+.routine-ai__book { display: flex; gap: 12px; background: var(--gray-100); border-radius: 14px; padding: 14px; }
+.routine-ai__book span { font-size: 22px; }
+.routine-ai__book strong { display: block; font-size: 14px; }
+.routine-ai__book em { font-style: normal; font-size: 12.5px; color: var(--gray-600); }
+.routine-ai__book p { margin: 4px 0 0; font-size: 13px; color: var(--gray-600); }
+
+/* 나다움 포인트 목업 */
+.routine-points { display: grid; gap: 14px; }
+.routine-point { display: flex; align-items: center; gap: 16px; background: var(--gray-100); border-radius: 14px; padding: 16px 18px; }
+.routine-point strong { font-size: 20px; font-weight: 800; color: var(--lime-dark); flex-shrink: 0; min-width: 52px; }
+.routine-point__title { font-size: 14.5px; font-weight: 700; }
+.routine-point__meta { font-size: 12.5px; color: var(--gray-600); margin-top: 2px; }
+
 .routine-quotes { margin-top: 56px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .routine-quotes .quote { width: auto; }
 
@@ -87,7 +180,8 @@
 @media (max-width: 900px) {
   .routine-stats__grid { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; }
   .routine-why { grid-template-columns: 1fr; }
-  .routine-features { grid-template-columns: 1fr; }
+  .routine-block { grid-template-columns: 1fr; gap: 28px; margin-top: 56px; }
+  .routine-block--reverse .routine-block__text { order: 0; }
   .routine-quotes { grid-template-columns: 1fr; }
 }
 </style>
@@ -204,36 +298,118 @@
     <div class="section__head reveal">
       <h2 class="section__title">루틴 실천의 모든 과정을<br />한 앱에서</h2>
     </div>
-    <div class="routine-features">
-      <div class="routine-feature reveal">
-        <span class="routine-feature__emoji">📸</span>
-        <h4>루틴 인증</h4>
-        <p>매일 사진으로 인증하고, 친구들의 인증 피드에 좋아요와 댓글로 서로 응원해요.</p>
+    <!-- 1. 루틴 인증 -->
+    <div class="routine-block reveal">
+      <div class="routine-block__text">
+        <span class="routine-block__label">01 · 루틴 인증</span>
+        <h3>매일 사진으로 인증하고<br />친구들과 함께 달려요</h3>
+        <p>오늘 인증한 친구들의 사진이 피드에 올라와요. 좋아요와 댓글로 서로 응원하면서 혼자서는 못 하던 루틴도 꾸준히 지속할 수 있어요.</p>
       </div>
-      <div class="routine-feature reveal delay-1">
-        <span class="routine-feature__emoji">🗓️</span>
-        <h4>인증 달력</h4>
-        <p>인증한 날이 달력에 초록으로 쌓여요. 빈 칸을 채우고 싶은 마음이 꾸준함으로 이어져요.</p>
+      <div class="routine-mock">
+        <span class="routine-mock__head">🌱 아침 루틴 21일 · 8명 참여</span>
+        <ul class="routine-feed">
+          <li><strong>지민</strong><em>· 14일째</em><p>오늘도 6시에 일어났어요! 스트레칭 후 개운해요.</p><span>♡ 5 · 💬 2</span></li>
+          <li><strong>현우</strong><em>· 14일째</em><p>3일 연속이에요. 생각보다 어렵지 않아요!</p><span>♡ 8 · 💬 1</span></li>
+          <li><strong>나연</strong><em>· 12일째</em><p>할 일 3가지 적고 나니 하루가 더 알차요.</p><span>♡ 6</span></li>
+        </ul>
       </div>
-      <div class="routine-feature reveal delay-2">
-        <span class="routine-feature__emoji">🙌</span>
-        <h4>끗짱 시스템</h4>
-        <p>루틴 리더 '끗짱'이 참여자를 승인하고 인증 현황을 확인하며, 완주한 청소년에게 편지를 남겨요.</p>
+    </div>
+
+    <!-- 2. 인증 달력 -->
+    <div class="routine-block routine-block--reverse reveal">
+      <div class="routine-block__text">
+        <span class="routine-block__label">02 · 인증 달력</span>
+        <h3>내 한 달 기록이<br />달력에 초록으로 채워져요</h3>
+        <p>인증한 날이 달력에 초록 동그라미로 쌓여요. 빈 칸을 채우고 싶어지는 게 루틴 지속의 심리적 동력이 되어, 자연스럽게 꾸준함으로 이어져요.</p>
       </div>
-      <div class="routine-feature reveal delay-3">
-        <span class="routine-feature__emoji">🤖</span>
-        <h4>AI 루틴 리포트</h4>
-        <p>누적된 인증 데이터를 AI가 분석해 지금 나에게 맞는 동기부여 메시지와 책을 추천해줘요.</p>
+      <div class="routine-mock">
+        <span class="routine-mock__head">📅 2026년 7월</span>
+        <div class="routine-cal__grid">
+          <span class="dow">일</span><span class="dow">월</span><span class="dow">화</span><span class="dow">수</span><span class="dow">목</span><span class="dow">금</span><span class="dow">토</span>
+          <span></span><span></span><span></span>
+          <span class="routine-cal__day is-done">1</span><span class="routine-cal__day is-done">2</span><span class="routine-cal__day is-done">3</span><span class="routine-cal__day is-done">4</span>
+          <span class="routine-cal__day is-done">5</span><span class="routine-cal__day is-done">6</span><span class="routine-cal__day is-done">7</span><span class="routine-cal__day is-done">8</span><span class="routine-cal__day is-done">9</span><span class="routine-cal__day is-done">10</span><span class="routine-cal__day is-done">11</span>
+          <span class="routine-cal__day is-done">12</span><span class="routine-cal__day is-done">13</span><span class="routine-cal__day is-done">14</span><span class="routine-cal__day">15</span><span class="routine-cal__day">16</span><span class="routine-cal__day">17</span><span class="routine-cal__day">18</span>
+          <span class="routine-cal__day is-today">19</span><span class="routine-cal__day">20</span><span class="routine-cal__day">21</span><span class="routine-cal__day">22</span><span class="routine-cal__day">23</span><span class="routine-cal__day">24</span><span class="routine-cal__day">25</span>
+        </div>
+        <div class="routine-cal__legend">
+          <span><i class="done"></i>인증 완료</span>
+          <span><i class="today"></i>오늘</span>
+        </div>
       </div>
-      <div class="routine-feature reveal">
-        <span class="routine-feature__emoji">✨</span>
-        <h4>나다움 포인트</h4>
-        <p>인증·댓글·후기 활동에 따라 포인트가 쌓여요. 모인 포인트는 문화상품권 등으로 교환할 수 있어요.</p>
+    </div>
+
+    <!-- 3. 끗짱 시스템 -->
+    <div class="routine-block reveal">
+      <div class="routine-block__text">
+        <span class="routine-block__label">03 · 끗짱 시스템</span>
+        <h3>루틴 리더 '끗짱'이<br />함께하는 청소년을 이끌어요</h3>
+        <p>루틴을 만들고 운영하는 '끗짱'은 신청자를 승인하고 인증 현황을 실시간으로 확인해요. 루틴을 완주한 청소년에게는 직접 편지를 받을 수 있어요.</p>
       </div>
-      <div class="routine-feature reveal delay-1">
-        <span class="routine-feature__emoji">💗</span>
-        <h4>후원 연계</h4>
-        <p>정기 후원으로 루틴 리워드와 끗짱 활동을 지원하며, 유스-잇 커뮤니티 운영을 함께 뒷받침해요.</p>
+      <div class="routine-mock">
+        <span class="routine-mock__head">📸 오늘 인증 현황</span>
+        <div class="routine-dash__row">
+          <div class="routine-dash__label"><span>🌱 아침 루틴 21일</span><span>2/4명</span></div>
+          <div class="routine-dash__bar"><i style="width:50%"></i></div>
+        </div>
+        <div class="routine-dash__row">
+          <div class="routine-dash__label"><span>🍳 하루 한 끼 직접 차리기</span><span>0/2명</span></div>
+          <div class="routine-dash__bar"><i style="width:0%"></i></div>
+        </div>
+        <div class="routine-dash__letter">
+          <strong>💌 받은 편지 · 서연</strong>
+          <p>끗짱님 덕분에 15일 완주를 했어요. 혼자였으면 못 했을 것 같아요.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. AI 루틴 리포트 -->
+    <div class="routine-block routine-block--reverse reveal">
+      <div class="routine-block__text">
+        <span class="routine-block__label">04 · AI 루틴 리포트</span>
+        <h3>내 루틴 기록을 AI가 분석하고<br />맞춤 피드백을 드려요</h3>
+        <p>단순한 인증 앱이 아니에요. 누적된 인증 데이터를 바탕으로 AI가 루틴 패턴을 분석하고, 지금 나에게 딱 맞는 동기부여 메시지와 책을 추천해줘요.</p>
+      </div>
+      <div class="routine-mock">
+        <span class="routine-mock__head">🤖 지민님의 기록을 분석했어요</span>
+        <div class="routine-ai__block">
+          <strong>📊 루틴 분석</strong>
+          아침 루틴을 14일째 이어가고 있어요! 주중 인증률이 85%로 매우 높아요. 이 리듬을 주말까지 유지하면 완주가 보여요.
+        </div>
+        <div class="routine-ai__books">
+          <strong>📚 지금 읽으면 좋을 책</strong>
+          <div class="routine-ai__book">
+            <span>📖</span>
+            <div><strong>아주 작은 습관의 힘</strong><em>제임스 클리어</em><p>1%씩 나아지는 루틴의 과학적 근거를 배울 수 있어요</p></div>
+          </div>
+          <div class="routine-ai__book">
+            <span>📖</span>
+            <div><strong>미라클 모닝</strong><em>핼 엘로드</em><p>아침 루틴으로 삶의 방향을 찾아가는 이야기예요</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. 나다움 포인트 -->
+    <div class="routine-block reveal">
+      <div class="routine-block__text">
+        <span class="routine-block__label">05 · 나다움 포인트</span>
+        <h3>꾸준함에 보상을,<br />나다움 포인트로 돌려드려요</h3>
+        <p>활동에 따라 나다움(N) 포인트가 쌓여요. 모인 포인트는 문화상품권 등으로 교환할 수 있어요. (교환 기능 준비 중)</p>
+      </div>
+      <div class="routine-points">
+        <div class="routine-point">
+          <strong>+10N</strong>
+          <div><div class="routine-point__title">📸 오늘 인증</div><div class="routine-point__meta">하루 1회 · 최초 인증 시 지급 — 매일 꾸준히 쌓이는 기본 포인트</div></div>
+        </div>
+        <div class="routine-point">
+          <strong>+1N</strong>
+          <div><div class="routine-point__title">💬 댓글 소통</div><div class="routine-point__meta">하루 최대 5회 · 응원할수록 쌓여요 — 커뮤니티 활성화에 기여한 만큼</div></div>
+        </div>
+        <div class="routine-point">
+          <strong>+30N</strong>
+          <div><div class="routine-point__title">✍️ 루틴 후기</div><div class="routine-point__meta">루틴 완주 후 1회 · 진심 어린 기록 — 가장 높은 가치의 나다움 활동</div></div>
+        </div>
       </div>
     </div>
   </div>
