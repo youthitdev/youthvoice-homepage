@@ -305,25 +305,9 @@ a { color: inherit; text-decoration: none; }
   color: var(--gray-600);
 }
 
-/* ===== 파트너 스트립 ===== */
-.partners-strip {
-  margin-top: 44px;
-  padding-top: 36px;
-  border-top: 1px solid var(--gray-100);
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.partners-strip__label {
-  font-size: 13.5px;
-  font-weight: 800;
-  color: var(--gray-600);
-  letter-spacing: 0.06em;
-  white-space: nowrap;
-}
+/* ===== 파트너 로고 ===== */
 .partners-strip__logos {
+  margin-top: 56px;
   display: flex;
   gap: 16px 36px;
   flex-wrap: wrap;
