@@ -307,9 +307,10 @@ a { color: inherit; text-decoration: none; }
 
 /* ===== 파트너 로고 ===== */
 .partners-strip__logos {
-  margin-top: 56px;
+  margin: 56px auto 0;
+  max-width: 720px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 4px;
 }
 .partner-logo {
@@ -964,7 +965,7 @@ a { color: inherit; text-decoration: none; }
   .programs, .cards, .joins, .models { grid-template-columns: 1fr; }
   .sub-title { margin-top: 64px; }
   .partner-cta { padding: 36px 28px; }
-  .partners-strip__logos { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+  .partners-strip__logos { grid-template-columns: repeat(2, 1fr); }
   .partner-logo { height: 56px; padding: 8px; }
   .partner-logo img { max-height: 30px; }
   .program { min-height: 0; }
