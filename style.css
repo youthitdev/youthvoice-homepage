@@ -328,6 +328,7 @@ a { color: inherit; text-decoration: none; }
   height: auto;
   object-fit: contain;
 }
+.partner-logo--sm img { max-height: 28px; }
 
 /* ===== Sections ===== */
 .section { padding: 110px 0; }
