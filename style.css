@@ -181,6 +181,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ===== Hero ===== */
 .hero {
+  position: relative;
   padding: 88px 0 96px;
   background:
     radial-gradient(640px 420px at 88% 18%, var(--lime-soft) 0%, transparent 70%),
@@ -189,6 +190,8 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
 }
 .hero__inner {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 48px;
@@ -272,6 +275,9 @@ a { color: inherit; text-decoration: none; }
 .widget--blue { background: var(--blue); color: #fff; bottom: 18%; left: 0; z-index: 2; }
 .widget--blue .widget__meta { color: rgba(255, 255, 255, 0.7); }
 .widget--white { bottom: 0; right: 10%; z-index: 1; }
+.widget--photo { padding: 0; overflow: hidden; }
+.widget--photo img { display: block; width: 100%; height: 150px; object-fit: cover; }
+.widget--photo .widget__label { padding: 14px 18px; }
 
 .float-1 { animation: floaty 5.2s ease-in-out infinite; }
 .float-2 { animation: floaty 6.1s ease-in-out 0.6s infinite; }
