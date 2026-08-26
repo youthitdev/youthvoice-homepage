@@ -314,7 +314,7 @@ a { color: inherit; text-decoration: none; }
   max-width: 900px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 4px;
+  gap: 4px 28px;
 }
 .partner-logo {
   display: flex;
