@@ -56,6 +56,18 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 24px;
 }
 .pill--lime { background: var(--lime-soft); color: var(--lime-dark); }
+
+.pill__type {
+  display: inline-block;
+  border-right: 2px solid currentColor;
+  animation: pill-caret 0.7s step-end infinite;
+}
+@keyframes pill-caret {
+  50% { border-color: transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pill__type { border-right: none; animation: none; }
+}
 .pill--pink { background: var(--pink-soft); color: var(--pink); }
 .pill--blue { background: var(--blue-soft); color: var(--blue); }
 
