@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 <link rel="stylesheet" href="https://resource.stibee.com/subscribe/stb_subscribe_form_style.css">
-<link rel="stylesheet" href="style.css?v=20260825o" />
+<link rel="stylesheet" href="style.css?v=20260825p" />
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
@@ -74,12 +74,21 @@
 <main id="main">
 <!-- ===== Hero ===== -->
 <section class="hero">
-  <div class="twinkle-field" aria-hidden="true">
-    <span class="twinkle" style="top:10%; left:6%; --tw-size:12px; --tw-color:var(--lime); --tw-dur:3.4s; --tw-delay:0s;">✦</span>
-    <span class="twinkle" style="top:78%; left:14%; --tw-size:10px; --tw-color:var(--pink); --tw-dur:4.2s; --tw-delay:0.7s;">✦</span>
-    <span class="twinkle" style="top:16%; left:46%; --tw-size:14px; --tw-color:var(--blue); --tw-dur:3.8s; --tw-delay:1.3s;">✦</span>
-    <span class="twinkle" style="top:60%; left:58%; --tw-size:10px; --tw-color:var(--lime); --tw-dur:4.6s; --tw-delay:0.4s;">✦</span>
-    <span class="twinkle" style="top:30%; left:90%; --tw-size:12px; --tw-color:var(--pink); --tw-dur:3.6s; --tw-delay:1.8s;">✦</span>
+  <div class="orbit-field" aria-hidden="true">
+    <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid slice">
+      <g class="orbit-drift" fill="none">
+        <ellipse cx="500" cy="250" rx="430" ry="150" transform="rotate(-14 500 250)" stroke="var(--blue)" stroke-width="1.4" opacity="0.28" />
+        <circle cx="910" cy="205" r="5" fill="var(--blue)" />
+        <ellipse cx="500" cy="250" rx="330" ry="120" transform="rotate(10 500 250)" stroke="var(--pink)" stroke-width="1.4" opacity="0.3" />
+        <circle cx="220" cy="185" r="4.5" fill="var(--pink)" />
+        <ellipse cx="500" cy="250" rx="230" ry="90" transform="rotate(-7 500 250)" stroke="var(--lime)" stroke-width="1.3" opacity="0.32" />
+        <circle cx="700" cy="292" r="4" fill="var(--lime)" />
+        <ellipse cx="500" cy="250" rx="140" ry="55" transform="rotate(16 500 250)" stroke="var(--blue)" stroke-width="1.1" opacity="0.28" />
+        <circle cx="365" cy="270" r="3.2" fill="var(--blue)" />
+      </g>
+      <circle cx="500" cy="250" r="7" fill="var(--lime)" />
+      <circle cx="500" cy="250" r="16" fill="var(--lime)" opacity="0.18" />
+    </svg>
   </div>
   <div class="container hero__inner">
     <div class="hero__text">
@@ -119,6 +128,34 @@
         <div class="program__tags"><span>취향</span><span>모임</span><span>오프라인</span></div>
         <h3>[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] 소모임</h3>
         <p>한 달에 한 번, 취향과 관심사로 모이는 작은 모임. 느슨하지만 확실하게 연결되는 오프라인 커뮤니티.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 임팩트 ===== -->
+<section class="impact" id="impact">
+  <div class="container">
+    <span class="pill pill--lime reveal">IMPACT</span>
+    <div class="section__head reveal">
+      <h2 class="section__title impact__title">숫자로 보는 변화</h2>
+    </div>
+    <div class="impact__grid">
+      <div class="impact__stat reveal">
+        <span class="impact__num">45.4%</span>
+        <span class="impact__desc">불안·우울 감소</span>
+      </div>
+      <div class="impact__stat reveal delay-1">
+        <span class="impact__num">74%</span>
+        <span class="impact__desc">프로그램 완주율</span>
+      </div>
+      <div class="impact__stat reveal delay-2">
+        <span class="impact__num">95.6%</span>
+        <span class="impact__desc">재참여 의향</span>
+      </div>
+      <div class="impact__stat reveal delay-3">
+        <span class="impact__num">1,700명</span>
+        <span class="impact__desc">3년간 지원 목표 청소년 수</span>
       </div>
     </div>
   </div>
@@ -406,6 +443,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260825o"></script>
+<script src="script.js?v=20260825p"></script>
 </body>
 </html>
