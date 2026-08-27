@@ -464,115 +464,37 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.02em;
 }
 
-/* 궤도 다이어그램: 진행 과정을 궤도점으로 요약 */
-.orbit-diagram {
-  position: relative;
-  max-width: 620px;
-  height: 380px;
-  margin: 36px auto 0;
-  border-radius: var(--radius);
-  background: radial-gradient(ellipse at 50% 42%, #22331a 0%, var(--ink) 72%);
-  overflow: hidden;
-}
-.orbit-diagram__star {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: #fff;
-  opacity: 0.5;
-}
-.orbit-diagram__ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 250px;
-  height: 250px;
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-.orbit-diagram__core {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 118px;
-  height: 118px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle at 35% 30%, var(--lime), var(--blue) 88%);
-  box-shadow: 0 0 60px 12px rgba(141, 198, 63, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.orbit-diagram__core span {
-  color: #fff;
-  font-weight: 800;
-  font-size: 14px;
-  letter-spacing: -0.01em;
-}
-.orbit-diagram__point {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-.orbit-diagram__dot {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.08);
-}
-.orbit-diagram__label {
-  font-size: 13px;
-  font-weight: 800;
-  color: #fff;
-  white-space: nowrap;
-}
-.orbit-diagram__point--1 { top: 14%; left: 14%; }
-.orbit-diagram__point--2 { top: 14%; right: 14%; }
-.orbit-diagram__point--3 { bottom: 14%; right: 14%; }
-.orbit-diagram__point--4 { bottom: 14%; left: 14%; }
 .process {
   position: relative;
   margin-top: 28px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-.process::before {
-  content: "";
-  position: absolute;
-  top: 21px;
-  left: 6%;
-  right: 6%;
-  border-top: 2px dashed var(--gray-300);
-  z-index: 0;
-}
-.process__dot {
-  position: absolute;
-  top: 21px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  opacity: 0.55;
-  z-index: 0;
-  animation: dot-float 4.5s ease-in-out infinite;
-}
-@keyframes dot-float {
-  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
-  50% { transform: translate(-50%, -50%) translateY(-6px); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .process__dot { animation: none; transform: translate(-50%, -50%); }
+  display: flex;
+  flex-direction: column;
 }
 .process__step {
   position: relative;
   z-index: 1;
+  display: flex;
+  gap: 28px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--gray-300);
 }
+.process__step:first-child { padding-top: 0; }
+.process__step:last-child { border-bottom: none; padding-bottom: 0; }
+.process__marker {
+  position: relative;
+  flex: none;
+}
+.process__marker::after {
+  content: "";
+  position: absolute;
+  top: 51px;
+  left: 50%;
+  width: 0;
+  height: 40px;
+  border-left: 2px dashed var(--gray-300);
+  transform: translateX(-50%);
+}
+.process__step:last-child .process__marker::after { display: none; }
 .process__num {
   position: relative;
   display: inline-flex;
@@ -600,27 +522,46 @@ a { color: inherit; text-decoration: none; }
 .process__step:nth-child(2) .process__num { background: radial-gradient(circle at 34% 30%, #fff, var(--pink)); --ring-color: var(--pink); }
 .process__step:nth-child(3) .process__num { background: radial-gradient(circle at 34% 30%, #fff, var(--blue)); --ring-color: var(--blue); }
 .process__step:nth-child(4) .process__num { background: radial-gradient(circle at 34% 30%, #fff, var(--lime-dark)); --ring-color: var(--lime-dark); }
-.process__step h4 {
-  margin-top: 16px;
-  font-size: 19px;
+.process__body { flex: 1; min-width: 0; }
+.process__body h4 {
+  font-size: 21px;
   font-weight: 800;
 }
-.process__step p {
-  margin-top: 8px;
-  font-size: 14.5px;
-  line-height: 1.6;
+.process__body p {
+  margin-top: 10px;
+  max-width: 620px;
+  font-size: 15px;
+  line-height: 1.75;
   color: var(--gray-600);
+}
+.process__includes {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+}
+.process__includes li {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--gray-300);
+  border-radius: 999px;
+  padding: 6px 14px;
 }
 .process__photos {
   display: flex;
-  gap: 6px;
-  margin-top: 14px;
+  gap: 8px;
+  margin-top: 18px;
+  max-width: 420px;
 }
 .process__photos img {
   width: 50%;
-  height: 64px;
+  height: 96px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 /* ===== 파트너십 CTA ===== */
@@ -1081,17 +1022,12 @@ a { color: inherit; text-decoration: none; }
 
   .section, .donate { padding: 72px 0; }
   .programs, .cards, .joins { grid-template-columns: 1fr; }
-  .process { grid-template-columns: 1fr; gap: 32px; }
-  .process::before, .process__dot { display: none; }
-  .orbit-diagram { height: 320px; }
-  .orbit-diagram__ring { width: 190px; height: 190px; }
-  .orbit-diagram__core { width: 92px; height: 92px; }
-  .orbit-diagram__core span { font-size: 12px; }
-  .orbit-diagram__label { font-size: 11.5px; }
-  .orbit-diagram__point--1, .orbit-diagram__point--2 { top: 8%; }
-  .orbit-diagram__point--3, .orbit-diagram__point--4 { bottom: 8%; }
-  .orbit-diagram__point--1, .orbit-diagram__point--4 { left: 6%; }
-  .orbit-diagram__point--2, .orbit-diagram__point--3 { right: 6%; }
+  .process__step { gap: 18px; padding: 28px 0; }
+  .process__marker::after { top: 51px; height: 26px; }
+  .process__num { width: 36px; height: 36px; font-size: 12.5px; }
+  .process__body h4 { font-size: 18px; }
+  .process__body p { font-size: 14px; }
+  .process__photos { max-width: 100%; }
   .sub-title { margin-top: 64px; }
   .partner-cta { padding: 36px 28px; }
   .partners-strip__logos { grid-template-columns: repeat(2, 1fr); }
