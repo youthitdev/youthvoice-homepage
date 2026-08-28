@@ -171,8 +171,20 @@
 .routine-point__title { font-size: 14.5px; font-weight: 700; }
 .routine-point__meta { font-size: 12.5px; color: var(--gray-600); margin-top: 2px; }
 
-.routine-quotes { margin-top: 56px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.routine-quotes .quote { width: auto; }
+.routine-quotes { margin-top: 56px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 24px; }
+.routine-quotes .quote { width: auto; position: relative; border-radius: 22px; }
+.routine-quotes .quote::after {
+  content: "";
+  position: absolute;
+  bottom: -13px;
+  width: 0;
+  height: 0;
+  border: 14px solid transparent;
+  border-top-color: var(--gray-100);
+  border-bottom: 0;
+}
+.routine-quotes .quote:nth-child(odd)::after { left: 32px; }
+.routine-quotes .quote:nth-child(even)::after { right: 32px; }
 
 .donate--routine { background: var(--lime-dark); }
 .donate--routine .btn--light { color: var(--lime-dark); }
@@ -422,10 +434,10 @@
       <h2 class="section__title">참여 청소년들이<br />이렇게 말했어요</h2>
     </div>
     <div class="routine-quotes">
-      <figure class="quote reveal"><blockquote>"오늘은 하늘 사진 한 장 찍기!" 작고 단순하지만, 오늘을 살아가는 이유가 하나 생겨요.</blockquote><figcaption>한끗루틴 참여 청소년</figcaption></figure>
-      <figure class="quote reveal delay-1"><blockquote>내가 뭔가를 했다는 감각은 무기력함을 밀어내는 강한 힘이 돼요.</blockquote><figcaption>한끗루틴 참여 청소년</figcaption></figure>
-      <figure class="quote reveal delay-2"><blockquote>혼자 하는 것 같지만 함께 인증하고 응원받으면 "나 혼자 아니구나" 하는 소속감이 생겨요.</blockquote><figcaption>한끗루틴 참여 청소년</figcaption></figure>
-      <figure class="quote reveal delay-3"><blockquote>하루 한 가지 약속을 지키는 것만으로 삶에 작은 리듬과 안정감이 생겨요.</blockquote><figcaption>한끗루틴 참여 청소년</figcaption></figure>
+      <figure class="quote reveal"><blockquote>"오늘은 하늘 사진 한 장 찍기!" 작고 단순하지만, 오늘을 살아가는 이유가 하나 생겨요.</blockquote></figure>
+      <figure class="quote reveal delay-1"><blockquote>내가 뭔가를 했다는 감각은 무기력함을 밀어내는 강한 힘이 돼요.</blockquote></figure>
+      <figure class="quote reveal delay-2"><blockquote>혼자 하는 것 같지만 함께 인증하고 응원받으면 "나 혼자 아니구나" 하는 소속감이 생겨요.</blockquote></figure>
+      <figure class="quote reveal delay-3"><blockquote>하루 한 가지 약속을 지키는 것만으로 삶에 작은 리듬과 안정감이 생겨요.</blockquote></figure>
     </div>
   </div>
 </section>
