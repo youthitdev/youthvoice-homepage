@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-<link rel="stylesheet" href="style.css?v=20260826d" />
+<link rel="stylesheet" href="style.css?v=20260826f" />
 <style>
 /* ===== 한끗루틴 페이지 전용 (라임, 습관·성장 무드) ===== */
 .routine-hero {
@@ -170,6 +170,45 @@
 .routine-point strong { font-size: 20px; font-weight: 800; color: var(--lime-dark); flex-shrink: 0; min-width: 52px; }
 .routine-point__title { font-size: 14.5px; font-weight: 700; }
 .routine-point__meta { font-size: 12.5px; color: var(--gray-600); margin-top: 2px; }
+
+/* 스크롤 등장 효과 */
+.routine-feed li {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.routine-feed li.is-visible { opacity: 1; transform: none; }
+.routine-cal__day {
+  opacity: 0;
+  transform: scale(0.4);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.routine-cal__day.is-visible { opacity: 1; transform: scale(1); }
+.routine-dash__bar i { width: 0; transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1); }
+.routine-dash__letter {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s;
+}
+.routine-dash__letter.is-visible { opacity: 1; transform: none; }
+.routine-ai__book {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.routine-ai__book.is-visible { opacity: 1; transform: none; }
+.routine-point {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.routine-point.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .routine-feed li, .routine-cal__day, .routine-dash__letter, .routine-ai__book, .routine-point {
+    opacity: 1; transform: none; transition: none;
+  }
+  .routine-dash__bar i { transition: none; }
+}
 
 .routine-quotes { margin-top: 56px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 24px; }
 .routine-quotes .quote { width: auto; position: relative; border-radius: 22px; }
@@ -361,11 +400,11 @@
         <span class="routine-mock__head">📸 오늘 인증 현황</span>
         <div class="routine-dash__row">
           <div class="routine-dash__label"><span>🌱 아침 루틴 15일</span><span>2/4명</span></div>
-          <div class="routine-dash__bar"><i style="width:50%"></i></div>
+          <div class="routine-dash__bar"><i data-width="50%"></i></div>
         </div>
         <div class="routine-dash__row">
           <div class="routine-dash__label"><span>🍳 하루 한 끼 직접 차리기</span><span>0/2명</span></div>
-          <div class="routine-dash__bar"><i style="width:0%"></i></div>
+          <div class="routine-dash__bar"><i data-width="0%"></i></div>
         </div>
         <div class="routine-dash__letter">
           <strong>💌 받은 편지 · 서연</strong>
@@ -443,23 +482,6 @@
 </section>
 
 <!-- ===== CTA ===== -->
-<section class="donate donate--routine" id="join">
-  <div class="twinkle-field" aria-hidden="true">
-    <span class="twinkle" style="top:14%; left:10%; --tw-size:16px; --tw-color:var(--lime-soft); --tw-dur:3.2s; --tw-delay:0s;">✦</span>
-    <span class="twinkle" style="top:68%; left:16%; --tw-size:12px; --tw-color:#fff; --tw-dur:4.1s; --tw-delay:0.6s;">✦</span>
-    <span class="twinkle" style="top:22%; left:86%; --tw-size:20px; --tw-color:var(--lime-soft); --tw-dur:3.7s; --tw-delay:1.1s;">✦</span>
-    <span class="twinkle" style="top:80%; left:76%; --tw-size:14px; --tw-color:#fff; --tw-dur:4.6s; --tw-delay:0.3s;">✦</span>
-    <span class="twinkle" style="top:8%; left:50%; --tw-size:10px; --tw-color:var(--lime-soft); --tw-dur:3.0s; --tw-delay:1.4s;">✦</span>
-    <span class="twinkle" style="top:58%; left:42%; --tw-size:18px; --tw-color:#fff; --tw-dur:5.0s; --tw-delay:0.8s;">✦</span>
-    <span class="twinkle" style="top:36%; left:22%; --tw-size:12px; --tw-color:var(--lime-soft); --tw-dur:3.9s; --tw-delay:1.9s;">✦</span>
-    <span class="twinkle" style="top:46%; left:69%; --tw-size:16px; --tw-color:#fff; --tw-dur:4.3s; --tw-delay:0.2s;">✦</span>
-  </div>
-  <div class="container donate__inner reveal">
-    <span class="donate__emoji">🌱</span>
-    <h2>학교 밖 청소년이라면 누구나,<br />매일 한 끗씩 함께해요</h2>
-    <a href="https://youthitdev.github.io/youthit-routine/" target="_blank" rel="noopener" class="btn btn--light">앱 체험하기 →</a>
-  </div>
-</section>
 </main>
 
 <!-- ===== Footer ===== -->
@@ -469,7 +491,7 @@
       <img class="footer__logo" src="assets/logo_yv.png" alt="YouthVoice" />
       <div class="footer__legal-cols">
         <div class="footer__legal-col">
-          <p>사단법인 유스보이스 | 대표 김재순</p>
+          <p>사단법인 유스보이스</p>
           <p>개인정보관리책임자 김재순 | 사업자등록번호 116-82-39766</p>
           <p>(우) 04768, 서울 성동구 뚝섬로1나길 5, 6층</p>
         </div>
@@ -505,6 +527,115 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260826d"></script>
+<script src="script.js?v=20260826f"></script>
+<script>
+// 숫자 롤링 카운트업
+function animateCount(el) {
+  const raw = el.textContent.trim();
+  const m = raw.match(/^([\d,]+(?:\.\d+)?)(.*)$/);
+  if (!m) return;
+  const numStr = m[1];
+  const suffix = m[2];
+  const isFloat = numStr.includes(".");
+  const hasComma = numStr.includes(",");
+  const target = parseFloat(numStr.replace(/,/g, ""));
+  const duration = 1100;
+  const start = performance.now();
+  function frame(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    const current = target * eased;
+    let display = isFloat ? current.toFixed(1) : Math.round(current).toString();
+    if (hasComma) display = Number(display).toLocaleString();
+    el.textContent = display + suffix;
+    if (p < 1) requestAnimationFrame(frame);
+    else el.textContent = raw;
+  }
+  requestAnimationFrame(frame);
+}
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        countObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll(".routine-stats__grid strong").forEach((el) => countObserver.observe(el));
+}
+
+// 인증 피드 순차 등장
+const feedObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll(".routine-feed li").forEach((li, i) => {
+        li.style.transitionDelay = i * 100 + "ms";
+        li.classList.add("is-visible");
+      });
+      feedObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll(".routine-feed").forEach((el) => feedObserver.observe(el));
+
+// 인증 달력 날짜 순차 등장
+const calObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll(".routine-cal__day").forEach((day, i) => {
+        day.style.transitionDelay = i * 22 + "ms";
+        day.classList.add("is-visible");
+      });
+      calObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll(".routine-cal__grid").forEach((el) => calObserver.observe(el));
+
+// 끗짱 대시보드 막대 채우기 + 편지 등장
+const dashObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const target = entry.target;
+      target.querySelectorAll(".routine-dash__bar i").forEach((bar) => {
+        bar.style.width = bar.dataset.width;
+      });
+      const letter = target.querySelector(".routine-dash__letter");
+      if (letter) letter.classList.add("is-visible");
+      dashObserver.unobserve(target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll(".routine-mock:has(.routine-dash__bar)").forEach((el) => dashObserver.observe(el));
+
+// AI 책 추천 순차 등장
+const bookObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll(".routine-ai__book").forEach((book, i) => {
+        book.style.transitionDelay = i * 140 + "ms";
+        book.classList.add("is-visible");
+      });
+      bookObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll(".routine-ai__books").forEach((el) => bookObserver.observe(el));
+
+// 나다움 포인트 순차 등장
+const pointObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll(".routine-point").forEach((point, i) => {
+        point.style.transitionDelay = i * 120 + "ms";
+        point.classList.add("is-visible");
+      });
+      pointObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll(".routine-points").forEach((el) => pointObserver.observe(el));
+</script>
 </body>
 </html>
