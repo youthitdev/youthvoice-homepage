@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 <link rel="stylesheet" href="https://resource.stibee.com/subscribe/stb_subscribe_form_style.css">
-<link rel="stylesheet" href="style.css?v=20260826g" />
+<link rel="stylesheet" href="style.css?v=20260826h" />
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
@@ -77,33 +77,23 @@
   <div class="orbit-field" aria-hidden="true">
     <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid slice">
       <g fill="none">
-        <path id="link-1" d="M90,160 Q10,240 150,320" stroke="var(--pink)" stroke-width="1.3" opacity="0.4" />
-        <path id="link-2" d="M910,180 Q990,260 850,340" stroke="var(--blue)" stroke-width="1.3" opacity="0.4" />
-        <path id="link-3" d="M90,160 Q500,-400 910,180" stroke="var(--lime)" stroke-width="1.1" opacity="0.3" />
-        <path id="link-4" d="M150,320 Q500,700 850,340" stroke="var(--blue)" stroke-width="1.1" opacity="0.3" />
+        <path id="ring-1" d="M60,250 A440,160 0 1,0 940,250 A440,160 0 1,0 60,250" transform="rotate(-12 500 250)" stroke="var(--blue)" stroke-width="1.2" opacity="0.22" />
+        <path id="ring-2" d="M170,250 A330,120 0 1,0 830,250 A330,120 0 1,0 170,250" transform="rotate(9 500 250)" stroke="var(--pink)" stroke-width="1.2" opacity="0.24" />
+        <path id="ring-3" d="M270,250 A230,85 0 1,0 730,250 A230,85 0 1,0 270,250" transform="rotate(-6 500 250)" stroke="var(--lime)" stroke-width="1.1" opacity="0.26" />
       </g>
-      <circle cx="90" cy="160" r="4.5" fill="var(--pink)" />
-      <circle cx="150" cy="320" r="3.5" fill="var(--pink)" />
-      <circle cx="910" cy="180" r="5" fill="var(--blue)" />
-      <circle cx="850" cy="340" r="4" fill="var(--lime)" />
+      <circle r="4.5" fill="var(--blue)">
+        <animateMotion dur="13s" repeatCount="indefinite" rotate="auto">
+          <mpath href="#ring-1" />
+        </animateMotion>
+      </circle>
       <circle r="4" fill="var(--pink)">
-        <animateMotion dur="7s" repeatCount="indefinite" rotate="auto">
-          <mpath href="#link-1" />
+        <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
+          <mpath href="#ring-2" />
         </animateMotion>
       </circle>
-      <circle r="4" fill="var(--blue)">
+      <circle r="3.5" fill="var(--lime)">
         <animateMotion dur="8s" repeatCount="indefinite" rotate="auto">
-          <mpath href="#link-2" />
-        </animateMotion>
-      </circle>
-      <circle r="3" fill="var(--lime)">
-        <animateMotion dur="11s" repeatCount="indefinite" rotate="auto">
-          <mpath href="#link-3" />
-        </animateMotion>
-      </circle>
-      <circle r="3" fill="var(--blue)">
-        <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
-          <mpath href="#link-4" />
+          <mpath href="#ring-3" />
         </animateMotion>
       </circle>
     </svg>
@@ -460,6 +450,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260826g"></script>
+<script src="script.js?v=20260826h"></script>
 </body>
 </html>
