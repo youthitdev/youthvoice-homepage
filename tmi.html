@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-<link rel="stylesheet" href="style.css?v=20260826h" />
+<link rel="stylesheet" href="style.css?v=20260826i" />
 <style>
 /* ===== TMI 페이지 전용 ===== */
 /* 히어로: 가운데 타이포 + 흩어진 발견미션 카드 (메인과 다른 구성) */
@@ -210,8 +210,23 @@
   background: var(--gray-100);
   overflow: hidden;
 }
-.bar__track i { display: block; height: 100%; border-radius: 999px; background: var(--pink); }
+.bar__track i { display: block; width: 0; height: 100%; border-radius: 999px; background: var(--pink); transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1); }
 .bars__src { font-size: 13px; color: var(--gray-600); margin-top: 6px; }
+
+.cards-strip__row img {
+  opacity: 0;
+  transform: translateY(14px) rotate(0deg) !important;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.cards-strip__row img.is-visible {
+  opacity: 1;
+}
+.cards-strip__row img.is-visible:nth-child(odd) { transform: translateY(0) rotate(-3deg) !important; }
+.cards-strip__row img.is-visible:nth-child(even) { transform: translateY(0) rotate(3deg) !important; }
+@media (prefers-reduced-motion: reduce) {
+  .cards-strip__row img { opacity: 1 !important; transition: none; }
+  .bar__track i { transition: none; }
+}
 
 .tmi-quotes {
   margin-top: 56px;
@@ -498,6 +513,74 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260826h"></script>
+<script src="script.js?v=20260826i"></script>
+<script>
+// 숫자 롤링 카운트업
+function animateCount(el) {
+  const raw = el.textContent.trim();
+  const m = raw.match(/^([\d,]+(?:\.\d+)?)(.*)$/);
+  if (!m) return;
+  const numStr = m[1];
+  const suffix = m[2];
+  const isFloat = numStr.includes(".");
+  const hasComma = numStr.includes(",");
+  const target = parseFloat(numStr.replace(/,/g, ""));
+  const duration = 1100;
+  const start = performance.now();
+  function frame(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    const current = target * eased;
+    let display = isFloat ? current.toFixed(1) : Math.round(current).toString();
+    if (hasComma) display = Number(display).toLocaleString();
+    el.textContent = display + suffix;
+    if (p < 1) requestAnimationFrame(frame);
+    else el.textContent = raw;
+  }
+  requestAnimationFrame(frame);
+}
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        countObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll(".tmi-stat strong").forEach((el) => countObserver.observe(el));
+}
+
+// 발견미션 카드 순차 등장
+const cardsObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll(".cards-strip__row img").forEach((img, i) => {
+        img.style.transitionDelay = i * 80 + "ms";
+        img.classList.add("is-visible");
+      });
+      cardsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll(".cards-strip__row").forEach((el) => cardsObserver.observe(el));
+
+// 성과 막대 채우기
+document.querySelectorAll(".bars .bar__track i").forEach((bar) => {
+  bar.dataset.width = bar.style.width;
+  bar.style.width = "0";
+});
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll(".bar__track i").forEach((bar, i) => {
+        setTimeout(() => { bar.style.width = bar.dataset.width; }, i * 90);
+      });
+      barObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll(".bars").forEach((el) => barObserver.observe(el));
+</script>
 </body>
 </html>
