@@ -409,6 +409,7 @@ a { color: inherit; text-decoration: none; }
 .program--lime .program__link { color: var(--lime-dark); }
 .program--pink .program__link { color: var(--pink); }
 .program--blue .program__link { color: var(--blue); }
+.program__link--soon { color: var(--gray-600) !important; }
 
 /* ===== 파트너십 카드 ===== */
 .cards {
