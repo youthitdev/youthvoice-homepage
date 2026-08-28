@@ -12,20 +12,6 @@ const observer = new IntersectionObserver(
 );
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
-// 히어로 pill 타이핑 효과
-const typeTarget = document.querySelector(".pill__type");
-if (typeTarget && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const fullText = typeTarget.textContent;
-  typeTarget.textContent = "";
-  let i = 0;
-  setTimeout(() => {
-    const timer = setInterval(() => {
-      i++;
-      typeTarget.textContent = fullText.slice(0, i);
-      if (i >= fullText.length) clearInterval(timer);
-    }, 70);
-  }, 400);
-}
 
 // CSV 시트를 사용하는 목록(사업보고 등)에서 공유하는 유틸
 // 따옴표로 감싼 필드(쉼표·줄바꿈 포함)를 처리하는 CSV 파서
