@@ -206,16 +206,6 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
 }
 .orbit-field svg { width: 100%; height: 100%; display: block; }
-.orbit-drift {
-  transform-origin: 500px 250px;
-  animation: orbit-drift 200s linear infinite;
-}
-@keyframes orbit-drift {
-  to { transform: rotate(360deg); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .orbit-drift { animation: none; }
-}
 .hero__inner {
   position: relative;
   z-index: 1;
