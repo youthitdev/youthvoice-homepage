@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-<link rel="stylesheet" href="style.css?v=20260826t" />
+<link rel="stylesheet" href="style.css?v=20260826u" />
 <style>
 /* ===== TMI 페이지 전용 ===== */
 /* 히어로: 가운데 타이포 + 흩어진 발견미션 카드 (메인과 다른 구성) */
@@ -188,6 +188,27 @@
   letter-spacing: -0.02em;
 }
 .tmi-money__formula span { display: block; margin-top: 8px; font-size: 13.5px; color: var(--gray-600); }
+
+.tmi-works { margin-top: 64px; text-align: center; }
+.tmi-works__row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.tmi-works__row img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(23, 33, 14, 0.16);
+  transition: transform 0.25s;
+}
+.tmi-works__row img:hover { transform: translateY(-8px); }
+.tmi-works p {
+  margin-top: 24px;
+  font-size: 14.5px;
+  color: var(--gray-600);
+}
 .bars { margin-top: 48px; display: grid; gap: 22px; max-width: 760px; }
 .bar__label {
   font-size: 15.5px;
@@ -351,6 +372,7 @@
   .tmi-stat { min-width: 150px; padding: 22px 26px; flex: 1 1 40%; }
   .steps { grid-template-columns: 1fr 1fr; }
   .tmi-money { grid-template-columns: 1fr; padding: 36px 28px; }
+  .tmi-works__row { grid-template-columns: repeat(2, 1fr); }
   .tmi-quotes { grid-template-columns: 1fr; }
   .donate--tmi .tmi-cta-card { width: 110px; }
   .tmi-with { justify-content: center; gap: 24px; }
@@ -528,6 +550,17 @@
         <span>2026년 최저시급 기준</span>
       </div>
     </div>
+
+    <!-- 창작 작품 -->
+    <div class="tmi-works reveal">
+      <div class="tmi-works__row">
+        <img src="assets/works/work-1.jpg" alt="TMI 프로젝트 참여 청소년 창작 작품" />
+        <img src="assets/works/work-2.jpg" alt="TMI 프로젝트 참여 청소년 창작 작품" />
+        <img src="assets/works/work-3.jpg" alt="TMI 프로젝트 참여 청소년 창작 작품" />
+        <img src="assets/works/work-4.jpg" alt="TMI 프로젝트 참여 청소년 창작 작품" />
+      </div>
+      <p>창작지원금으로 완성한 청소년들의 작품 — 그림, 조형, 사진, 글까지 매체는 자유예요</p>
+    </div>
   </div>
 </section>
 
@@ -652,7 +685,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260826t"></script>
+<script src="script.js?v=20260826u"></script>
 <script>
 // 숫자 롤링 카운트업
 function animateCount(el) {
