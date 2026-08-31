@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-<link rel="stylesheet" href="style.css?v=20260826w" />
+<link rel="stylesheet" href="style.css?v=20260826x" />
 <style>
 /* ===== TMI 페이지 전용 ===== */
 /* 히어로: 가운데 타이포 + 흩어진 발견미션 카드 (메인과 다른 구성) */
@@ -332,34 +332,27 @@
 
 .tmi-with {
   margin-top: 36px;
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
 }
 .tmi-with__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 130px;
+  display: block;
   text-align: center;
   text-decoration: none;
   color: inherit;
 }
-.tmi-with__circle {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  display: block;
+.tmi-with__poster {
+  width: 100%;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
-  object-position: top center;
-  border: 3px solid var(--gray-100);
-  transition: transform 0.2s;
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(23, 33, 14, 0.16);
+  transition: transform 0.25s;
 }
-.tmi-with__item:hover .tmi-with__circle { transform: translateY(-4px) scale(1.04); }
-.tmi-with__circle--pink { border-color: var(--pink); }
-.tmi-with__circle--lime { border-color: var(--lime-dark); }
-.tmi-with__circle--blue { border-color: var(--blue); }
+.tmi-with__item:hover .tmi-with__poster { transform: translateY(-8px); }
 .tmi-with__label {
+  display: block;
   margin-top: 14px;
   font-size: 14.5px;
   font-weight: 700;
@@ -379,9 +372,7 @@
   .tmi-works__row { grid-template-columns: repeat(2, 1fr); }
   .tmi-quotes { grid-template-columns: 1fr; }
   .donate--tmi .tmi-cta-card { width: 110px; }
-  .tmi-with { justify-content: center; gap: 24px; }
-  .tmi-with__item { width: 100px; }
-  .tmi-with__circle { width: 80px; height: 80px; }
+  .tmi-with { grid-template-columns: repeat(2, 1fr); }
   .mission-example { grid-template-columns: 1fr; padding: 32px 28px; text-align: center; }
   .mission-example__badge { left: 50%; transform: translateX(-50%) rotate(-3deg); }
   .mission-example .quote::after {
@@ -620,23 +611,23 @@
     </div>
     <div class="tmi-with reveal">
       <a class="tmi-with__item" href="assets/posters/poster-school.jpg" target="_blank" rel="noopener">
-        <img class="tmi-with__circle tmi-with__circle--pink" src="assets/posters/poster-school.jpg" alt="학교 협업 포스터" />
+        <img class="tmi-with__poster" src="assets/posters/poster-school.jpg" alt="학교 협업 포스터" />
         <span class="tmi-with__label">학교 협업</span>
       </a>
       <a class="tmi-with__item" href="assets/posters/poster-library.jpg" target="_blank" rel="noopener">
-        <img class="tmi-with__circle tmi-with__circle--lime" src="assets/posters/poster-library.jpg" alt="공공도서관 협업 포스터" />
+        <img class="tmi-with__poster" src="assets/posters/poster-library.jpg" alt="공공도서관 협업 포스터" />
         <span class="tmi-with__label">공공도서관 협업</span>
       </a>
       <a class="tmi-with__item" href="assets/posters/poster-artist-txt.jpg" target="_blank" rel="noopener">
-        <img class="tmi-with__circle tmi-with__circle--blue" src="assets/posters/poster-artist-txt.jpg" alt="아티스트 후원 TXT 태현 포스터" />
+        <img class="tmi-with__poster" src="assets/posters/poster-artist-txt.jpg" alt="아티스트 후원 TXT 태현 포스터" />
         <span class="tmi-with__label">아티스트 후원<br />TXT 태현</span>
       </a>
       <a class="tmi-with__item" href="assets/posters/poster-nonmetro.jpg" target="_blank" rel="noopener">
-        <img class="tmi-with__circle tmi-with__circle--pink" src="assets/posters/poster-nonmetro.jpg" alt="비수도권 청소년 포스터" />
+        <img class="tmi-with__poster" src="assets/posters/poster-nonmetro.jpg" alt="비수도권 청소년 포스터" />
         <span class="tmi-with__label">비수도권 청소년</span>
       </a>
       <a class="tmi-with__item" href="assets/posters/poster-outofschool.jpg" target="_blank" rel="noopener">
-        <img class="tmi-with__circle tmi-with__circle--lime" src="assets/posters/poster-outofschool.jpg" alt="학교 밖 청소년 포스터" />
+        <img class="tmi-with__poster" src="assets/posters/poster-outofschool.jpg" alt="학교 밖 청소년 포스터" />
         <span class="tmi-with__label">학교 밖 청소년</span>
       </a>
     </div>
@@ -689,7 +680,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260826w"></script>
+<script src="script.js?v=20260826x"></script>
 <script>
 // 숫자 롤링 카운트업
 function animateCount(el) {
