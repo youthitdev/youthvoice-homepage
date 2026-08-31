@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-<link rel="stylesheet" href="style.css?v=20260826n" />
+<link rel="stylesheet" href="style.css?v=20260826o" />
 <style>
 /* ===== TMI 페이지 전용 ===== */
 /* 히어로: 가운데 타이포 + 흩어진 발견미션 카드 (메인과 다른 구성) */
@@ -260,7 +260,7 @@
   gap: 44px;
   align-items: center;
 }
-.mission-example__icon { display: block; text-align: center; font-size: 60px; }
+.mission-example__icon { display: block; margin: 0 auto; width: 88px; height: 88px; object-fit: contain; }
 .mission-example__mission { text-align: center; }
 .mission-example__mission h4 { margin-top: 12px; font-size: 18px; font-weight: 800; letter-spacing: -0.02em; }
 .mission-example__mission p { margin-top: 8px; font-size: 13.5px; color: var(--gray-600); line-height: 1.6; }
@@ -460,7 +460,7 @@
     <!-- 발견미션 예시 -->
     <div class="mission-example reveal">
       <div class="mission-example__mission">
-        <span class="mission-example__icon">🌇</span>
+        <img class="mission-example__icon" src="assets/tmi-sunset.png" alt="지는 해, 뜨는 해 미션 아이콘" />
         <h4>지는 해, 뜨는 해</h4>
         <p>일몰이 잘 보이는 공간을 찾아,<br />1시간 동안 일몰 감상하기</p>
       </div>
@@ -590,7 +590,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260826n"></script>
+<script src="script.js?v=20260826o"></script>
 <script>
 // 숫자 롤링 카운트업
 function animateCount(el) {
