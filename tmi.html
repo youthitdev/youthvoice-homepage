@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-<link rel="stylesheet" href="style.css?v=20260826x" />
+<link rel="stylesheet" href="style.css?v=20260826y" />
 <style>
 /* ===== TMI 페이지 전용 ===== */
 /* 히어로: 가운데 타이포 + 흩어진 발견미션 카드 (메인과 다른 구성) */
@@ -209,7 +209,8 @@
   font-size: 14.5px;
   color: var(--gray-600);
 }
-.bars { margin-top: 48px; display: grid; gap: 22px; max-width: 760px; }
+.bars { margin-top: 48px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 40px; max-width: 760px; }
+.bars__src { grid-column: 1 / -1; }
 .bar__label {
   font-size: 15.5px;
   font-weight: 700;
@@ -361,6 +362,7 @@
 }
 
 @media (max-width: 900px) {
+  .bars { grid-template-columns: 1fr; }
   .tmi-hero { padding: 84px 0 110px; }
   .tmi-hero__cards img { width: 96px !important; opacity: 0.85; }
   .tmi-hero__cards img:nth-child(2),
@@ -680,7 +682,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260826x"></script>
+<script src="script.js?v=20260826y"></script>
 <script>
 // 숫자 롤링 카운트업
 function animateCount(el) {
