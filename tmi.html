@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-<link rel="stylesheet" href="style.css?v=20260826i" />
+<link rel="stylesheet" href="style.css?v=20260826j" />
 <style>
 /* ===== TMI 페이지 전용 ===== */
 /* 히어로: 가운데 타이포 + 흩어진 발견미션 카드 (메인과 다른 구성) */
@@ -203,6 +203,8 @@
 }
 .bar__label em { font-style: normal; font-size: 13.5px; font-weight: 600; color: var(--gray-600); }
 .bar__label strong { font-size: 20px; font-weight: 800; color: var(--pink); }
+.bar:first-child .bar__label strong { color: var(--blue); }
+.bar:first-child .bar__track i { background: var(--blue); }
 .bar__track {
   margin-top: 10px;
   height: 12px;
@@ -234,21 +236,35 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
-.tmi-quotes .quote { width: auto; }
+.tmi-quotes .quote { width: auto; position: relative; border-radius: 22px; }
+.tmi-quotes .quote::after {
+  content: "";
+  position: absolute;
+  bottom: -13px;
+  width: 0;
+  height: 0;
+  border: 14px solid transparent;
+  border-top-color: var(--gray-100);
+  border-bottom: 0;
+}
+.tmi-quotes .quote:nth-child(odd)::after { left: 32px; }
+.tmi-quotes .quote:nth-child(even)::after { right: 32px; }
 
 .tmi-with {
-  margin-top: 56px;
+  margin-top: 28px;
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
 }
-.tmi-with span {
+.tmi-with__tag {
   font-size: 14.5px;
   font-weight: 700;
-  background: var(--gray-100);
   border-radius: 999px;
-  padding: 10px 20px;
+  padding: 12px 22px;
 }
+.tmi-with__tag--pink { background: var(--pink-soft); color: var(--pink); }
+.tmi-with__tag--lime { background: var(--lime-soft); color: var(--lime-dark); }
+.tmi-with__tag--blue { background: var(--blue-soft); color: var(--blue); }
 
 @media (max-width: 900px) {
   .tmi-hero { padding: 84px 0 110px; }
@@ -450,19 +466,28 @@
 
     <!-- 참여자 목소리 -->
     <div class="tmi-quotes">
-      <figure class="quote reveal"><blockquote>학교를 나온 후 막막했던 시간을, 나다움을 찾고 소속감을 느끼는 시간으로 바꿔준 프로젝트예요.</blockquote><figcaption>🧭 TMI 참여 청소년</figcaption></figure>
-      <figure class="quote reveal delay-1"><blockquote>방황하며 힘들 수 있는 청소년기에 나다움을 생각하고 긍정적인 자극을 주는 시간이었어요.</blockquote><figcaption>🌱 TMI 참여 청소년</figcaption></figure>
-      <figure class="quote reveal delay-2"><blockquote>학교 밖에서도 주체적으로 무언가를 해낼 기회를 주는 프로젝트예요.</blockquote><figcaption>🏅 TMI 참여 청소년</figcaption></figure>
-      <figure class="quote reveal delay-3"><blockquote>미션 덕분에 일몰을 마음 편히 바라볼 수 있었어요. 멍하니 보다가 자연스럽게 ‘나’에 대해 생각하게 됐고요.</blockquote><figcaption>🌇 발견미션 ‘지는 해, 뜨는 해’ 참여 청소년</figcaption></figure>
+      <figure class="quote reveal"><blockquote>학교를 나온 후 막막했던 시간을, 나다움을 찾고 소속감을 느끼는 시간으로 바꿔준 프로젝트예요.</blockquote></figure>
+      <figure class="quote reveal delay-1"><blockquote>방황하며 힘들 수 있는 청소년기에 나다움을 생각하고 긍정적인 자극을 주는 시간이었어요.</blockquote></figure>
+      <figure class="quote reveal delay-2"><blockquote>학교 밖에서도 주체적으로 무언가를 해낼 기회를 주는 프로젝트예요.</blockquote></figure>
+      <figure class="quote reveal delay-3"><blockquote>미션 덕분에 일몰을 마음 편히 바라볼 수 있었어요. 멍하니 보다가 자연스럽게 ‘나’에 대해 생각하게 됐고요.</blockquote></figure>
     </div>
 
-    <!-- 함께한 확장 -->
+  </div>
+</section>
+
+<!-- ===== 협업 ===== -->
+<section class="section">
+  <div class="container">
+    <span class="pill pill--blue reveal">PARTNERSHIP</span>
+    <div class="section__head reveal">
+      <h2 class="section__title">다양한 파트너와 함께<br />TMI 프로젝트를 넓혀가요</h2>
+    </div>
     <div class="tmi-with reveal">
-      <span>🏫 학교 협업</span>
-      <span>📚 공공도서관 협업</span>
-      <span>🎤 아티스트 후원 · TXT 태현</span>
-      <span>🚉 비수도권 청소년</span>
-      <span>🧭 학교 밖 청소년</span>
+      <span class="tmi-with__tag tmi-with__tag--pink">🏫 학교 협업</span>
+      <span class="tmi-with__tag tmi-with__tag--lime">📚 공공도서관 협업</span>
+      <span class="tmi-with__tag tmi-with__tag--blue">🎤 아티스트 후원 · TXT 태현</span>
+      <span class="tmi-with__tag tmi-with__tag--pink">🚉 비수도권 청소년</span>
+      <span class="tmi-with__tag tmi-with__tag--lime">🧭 학교 밖 청소년</span>
     </div>
   </div>
 </section>
@@ -513,7 +538,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260826i"></script>
+<script src="script.js?v=20260826j"></script>
 <script>
 // 숫자 롤링 카운트업
 function animateCount(el) {
