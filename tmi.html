@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-<link rel="stylesheet" href="style.css?v=20260826m" />
+<link rel="stylesheet" href="style.css?v=20260826n" />
 <style>
 /* ===== TMI 페이지 전용 ===== */
 /* 히어로: 가운데 타이포 + 흩어진 발견미션 카드 (메인과 다른 구성) */
@@ -250,6 +250,39 @@
 .tmi-quotes .quote:nth-child(odd)::after { left: 32px; }
 .tmi-quotes .quote:nth-child(even)::after { right: 32px; }
 
+.mission-example {
+  margin-top: 40px;
+  background: var(--gray-100);
+  border-radius: var(--radius);
+  padding: 44px 48px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 44px;
+  align-items: center;
+}
+.mission-example__icon { display: block; text-align: center; font-size: 60px; }
+.mission-example__mission { text-align: center; }
+.mission-example__mission h4 { margin-top: 12px; font-size: 18px; font-weight: 800; letter-spacing: -0.02em; }
+.mission-example__mission p { margin-top: 8px; font-size: 13.5px; color: var(--gray-600); line-height: 1.6; }
+.mission-example .quote {
+  position: relative;
+  width: auto;
+  background: #fff;
+  border-radius: 22px;
+}
+.mission-example .quote::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -13px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border: 13px solid transparent;
+  border-right-color: #fff;
+  border-left: 0;
+}
+
 .tmi-with {
   margin-top: 28px;
   display: flex;
@@ -277,6 +310,17 @@
   .tmi-money { grid-template-columns: 1fr; padding: 36px 28px; }
   .tmi-quotes { grid-template-columns: 1fr; }
   .donate--tmi .tmi-cta-card { width: 110px; }
+  .mission-example { grid-template-columns: 1fr; padding: 32px 28px; text-align: center; }
+  .mission-example .quote::after {
+    top: -13px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    border: 13px solid transparent;
+    border-bottom-color: #fff;
+    border-right: 0;
+    border-top: 0;
+  }
 }
 @media (max-width: 560px) {
   .steps { grid-template-columns: 1fr; }
@@ -413,6 +457,18 @@
       <p>실제 발견미션 카드 — 예상치 못한 질문이 ‘새로운 나’를 깨워요</p>
     </div>
 
+    <!-- 발견미션 예시 -->
+    <div class="mission-example reveal">
+      <div class="mission-example__mission">
+        <span class="mission-example__icon">🌇</span>
+        <h4>지는 해, 뜨는 해</h4>
+        <p>일몰이 잘 보이는 공간을 찾아,<br />1시간 동안 일몰 감상하기</p>
+      </div>
+      <figure class="quote">
+        <blockquote>“그동안 일몰을 멍하니 바라보고 싶었는데, 딴짓하는 것 같아 쉽게 하지 못했어요. 그런데 미션을 통해 일몰을 마음 편히 바라볼 수 있어 좋았어요. 멍하니 바라보다 자연스럽게 ‘나’에 대해 생각해 볼 수 있었고요.”</blockquote>
+      </figure>
+    </div>
+
     <!-- 창작지원금 -->
     <div class="tmi-money reveal">
       <div>
@@ -534,7 +590,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260826m"></script>
+<script src="script.js?v=20260826n"></script>
 <script>
 // 숫자 롤링 카운트업
 function animateCount(el) {
