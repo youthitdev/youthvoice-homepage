@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-<link rel="stylesheet" href="style.css?v=20260826y" />
+<link rel="stylesheet" href="style.css?v=20260826z" />
 <style>
 /* ===== TMI 페이지 전용 ===== */
 /* 히어로: 가운데 타이포 + 흩어진 발견미션 카드 (메인과 다른 구성) */
@@ -340,8 +340,6 @@
 .tmi-with__item {
   display: block;
   text-align: center;
-  text-decoration: none;
-  color: inherit;
 }
 .tmi-with__poster {
   width: 100%;
@@ -349,9 +347,7 @@
   object-fit: cover;
   border-radius: 14px;
   box-shadow: 0 10px 26px rgba(23, 33, 14, 0.16);
-  transition: transform 0.25s;
 }
-.tmi-with__item:hover .tmi-with__poster { transform: translateY(-8px); }
 .tmi-with__label {
   display: block;
   margin-top: 14px;
@@ -612,26 +608,26 @@
       <h2 class="section__title">다양한 파트너와 함께<br />TMI 프로젝트를 넓혀가요</h2>
     </div>
     <div class="tmi-with reveal">
-      <a class="tmi-with__item" href="assets/posters/poster-school.jpg" target="_blank" rel="noopener">
+      <div class="tmi-with__item">
         <img class="tmi-with__poster" src="assets/posters/poster-school.jpg" alt="학교 협업 포스터" />
         <span class="tmi-with__label">학교 협업</span>
-      </a>
-      <a class="tmi-with__item" href="assets/posters/poster-library.jpg" target="_blank" rel="noopener">
+      </div>
+      <div class="tmi-with__item">
         <img class="tmi-with__poster" src="assets/posters/poster-library.jpg" alt="공공도서관 협업 포스터" />
         <span class="tmi-with__label">공공도서관 협업</span>
-      </a>
-      <a class="tmi-with__item" href="assets/posters/poster-artist-txt.jpg" target="_blank" rel="noopener">
+      </div>
+      <div class="tmi-with__item">
         <img class="tmi-with__poster" src="assets/posters/poster-artist-txt.jpg" alt="아티스트 후원 TXT 태현 포스터" />
         <span class="tmi-with__label">아티스트 후원<br />TXT 태현</span>
-      </a>
-      <a class="tmi-with__item" href="assets/posters/poster-nonmetro.jpg" target="_blank" rel="noopener">
+      </div>
+      <div class="tmi-with__item">
         <img class="tmi-with__poster" src="assets/posters/poster-nonmetro.jpg" alt="비수도권 청소년 포스터" />
         <span class="tmi-with__label">비수도권 청소년</span>
-      </a>
-      <a class="tmi-with__item" href="assets/posters/poster-outofschool.jpg" target="_blank" rel="noopener">
+      </div>
+      <div class="tmi-with__item">
         <img class="tmi-with__poster" src="assets/posters/poster-outofschool.jpg" alt="학교 밖 청소년 포스터" />
         <span class="tmi-with__label">학교 밖 청소년</span>
-      </a>
+      </div>
     </div>
   </div>
 </section>
@@ -682,7 +678,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260826y"></script>
+<script src="script.js?v=20260826z"></script>
 <script>
 // 숫자 롤링 카운트업
 function animateCount(el) {
