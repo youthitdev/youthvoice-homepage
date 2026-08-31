@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-<link rel="stylesheet" href="style.css?v=20260826s" />
+<link rel="stylesheet" href="style.css?v=20260826t" />
 <style>
 /* ===== TMI 페이지 전용 ===== */
 /* 히어로: 가운데 타이포 + 흩어진 발견미션 카드 (메인과 다른 구성) */
@@ -190,16 +190,20 @@
 .tmi-money__formula span { display: block; margin-top: 8px; font-size: 13.5px; color: var(--gray-600); }
 .bars { margin-top: 48px; display: grid; gap: 22px; max-width: 760px; }
 .bar__label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
   font-size: 15.5px;
   font-weight: 700;
 }
 .bar__label em { font-style: normal; font-size: 13.5px; font-weight: 600; color: var(--gray-600); }
-.bar__label strong { font-size: 20px; font-weight: 800; color: var(--pink); }
-.bar:first-child .bar__label strong { color: var(--blue); }
+.bar__value {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--pink);
+}
+.bar:first-child .bar__value { color: var(--blue); }
 .bar:first-child .bar__track i { background: var(--blue); }
 .bar__track {
   margin-top: 10px;
@@ -537,19 +541,23 @@
     </div>
     <div class="bars reveal">
       <div class="bar">
-        <div class="bar__label"><span>불안과 우울 감소 <em>카타르시스 분출 · 스트레스 완화</em></span><strong>39.5%</strong></div>
+        <div class="bar__label"><span>불안과 우울 감소 <em>카타르시스 분출 · 스트레스 완화</em></span></div>
+        <div class="bar__value">39.5% <span class="bar__arrow" aria-hidden="true">↓</span></div>
         <div class="bar__track"><i style="width:39.5%"></i></div>
       </div>
       <div class="bar">
-        <div class="bar__label"><span>자기표현 향상 <em>표현 능력 · 미디어 리터러시</em></span><strong>34.2%</strong></div>
+        <div class="bar__label"><span>자기표현 향상 <em>표현 능력 · 미디어 리터러시</em></span></div>
+        <div class="bar__value">34.2% <span class="bar__arrow" aria-hidden="true">↑</span></div>
         <div class="bar__track"><i style="width:34.2%"></i></div>
       </div>
       <div class="bar">
-        <div class="bar__label"><span>주체적인 삶 향상 <em>자기주도성 · 자아정체성</em></span><strong>26.4%</strong></div>
+        <div class="bar__label"><span>주체적인 삶 향상 <em>자기주도성 · 자아정체성</em></span></div>
+        <div class="bar__value">26.4% <span class="bar__arrow" aria-hidden="true">↑</span></div>
         <div class="bar__track"><i style="width:26.4%"></i></div>
       </div>
       <div class="bar">
-        <div class="bar__label"><span>소통의 확장 <em>창의적 사고 · 사회성</em></span><strong>10.8%</strong></div>
+        <div class="bar__label"><span>소통의 확장 <em>창의적 사고 · 사회성</em></span></div>
+        <div class="bar__value">10.8% <span class="bar__arrow" aria-hidden="true">↑</span></div>
         <div class="bar__track"><i style="width:10.8%"></i></div>
       </div>
       <p class="bars__src">* 2025 TMI 프로젝트 17기 사전/사후 설문 결과</p>
@@ -644,7 +652,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260826s"></script>
+<script src="script.js?v=20260826t"></script>
 <script>
 // 숫자 롤링 카운트업
 function animateCount(el) {
