@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-<link rel="stylesheet" href="style.css?v=20260826o" />
+<link rel="stylesheet" href="style.css?v=20260826p" />
 <style>
 /* ===== TMI 페이지 전용 ===== */
 /* 히어로: 가운데 타이포 + 흩어진 발견미션 카드 (메인과 다른 구성) */
@@ -251,6 +251,7 @@
 .tmi-quotes .quote:nth-child(even)::after { right: 32px; }
 
 .mission-example {
+  position: relative;
   margin-top: 40px;
   background: var(--gray-100);
   border-radius: var(--radius);
@@ -259,6 +260,19 @@
   grid-template-columns: 200px 1fr;
   gap: 44px;
   align-items: center;
+}
+.mission-example__badge {
+  position: absolute;
+  top: -16px;
+  left: 32px;
+  background: var(--pink);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 7px 16px;
+  border-radius: 999px;
+  transform: rotate(-3deg);
 }
 .mission-example__icon { display: block; margin: 0 auto; width: 88px; height: 88px; object-fit: contain; }
 .mission-example__mission { text-align: center; }
@@ -311,6 +325,7 @@
   .tmi-quotes { grid-template-columns: 1fr; }
   .donate--tmi .tmi-cta-card { width: 110px; }
   .mission-example { grid-template-columns: 1fr; padding: 32px 28px; text-align: center; }
+  .mission-example__badge { left: 50%; transform: translateX(-50%) rotate(-3deg); }
   .mission-example .quote::after {
     top: -13px;
     left: 50%;
@@ -459,6 +474,7 @@
 
     <!-- 발견미션 예시 -->
     <div class="mission-example reveal">
+      <span class="mission-example__badge">발견미션 예시</span>
       <div class="mission-example__mission">
         <img class="mission-example__icon" src="assets/tmi-sunset.png" alt="지는 해, 뜨는 해 미션 아이콘" />
         <h4>지는 해, 뜨는 해</h4>
@@ -590,7 +606,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260826o"></script>
+<script src="script.js?v=20260826p"></script>
 <script>
 // 숫자 롤링 카운트업
 function animateCount(el) {
