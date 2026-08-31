@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-<link rel="stylesheet" href="style.css?v=20260826p" />
+<link rel="stylesheet" href="style.css?v=20260826q" />
 <style>
 /* ===== TMI 페이지 전용 ===== */
 /* 히어로: 가운데 타이포 + 흩어진 발견미션 카드 (메인과 다른 구성) */
@@ -298,20 +298,37 @@
 }
 
 .tmi-with {
-  margin-top: 28px;
+  margin-top: 36px;
   display: flex;
-  gap: 12px;
+  gap: 32px;
   flex-wrap: wrap;
 }
-.tmi-with__tag {
+.tmi-with__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 130px;
+  text-align: center;
+}
+.tmi-with__circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+}
+.tmi-with__circle--pink { background: var(--pink-soft); }
+.tmi-with__circle--lime { background: var(--lime-soft); }
+.tmi-with__circle--blue { background: var(--blue-soft); }
+.tmi-with__label {
+  margin-top: 14px;
   font-size: 14.5px;
   font-weight: 700;
-  border-radius: 999px;
-  padding: 12px 22px;
+  color: var(--ink);
+  line-height: 1.4;
 }
-.tmi-with__tag--pink { background: var(--pink-soft); color: var(--pink); }
-.tmi-with__tag--lime { background: var(--lime-soft); color: var(--lime-dark); }
-.tmi-with__tag--blue { background: var(--blue-soft); color: var(--blue); }
 
 @media (max-width: 900px) {
   .tmi-hero { padding: 84px 0 110px; }
@@ -324,6 +341,9 @@
   .tmi-money { grid-template-columns: 1fr; padding: 36px 28px; }
   .tmi-quotes { grid-template-columns: 1fr; }
   .donate--tmi .tmi-cta-card { width: 110px; }
+  .tmi-with { justify-content: center; gap: 24px; }
+  .tmi-with__item { width: 100px; }
+  .tmi-with__circle { width: 80px; height: 80px; font-size: 30px; }
   .mission-example { grid-template-columns: 1fr; padding: 32px 28px; text-align: center; }
   .mission-example__badge { left: 50%; transform: translateX(-50%) rotate(-3deg); }
   .mission-example .quote::after {
@@ -551,11 +571,26 @@
       <h2 class="section__title">다양한 파트너와 함께<br />TMI 프로젝트를 넓혀가요</h2>
     </div>
     <div class="tmi-with reveal">
-      <span class="tmi-with__tag tmi-with__tag--pink">🏫 학교 협업</span>
-      <span class="tmi-with__tag tmi-with__tag--lime">📚 공공도서관 협업</span>
-      <span class="tmi-with__tag tmi-with__tag--blue">🎤 아티스트 후원 · TXT 태현</span>
-      <span class="tmi-with__tag tmi-with__tag--pink">🚉 비수도권 청소년</span>
-      <span class="tmi-with__tag tmi-with__tag--lime">🧭 학교 밖 청소년</span>
+      <div class="tmi-with__item">
+        <span class="tmi-with__circle tmi-with__circle--pink">🏫</span>
+        <span class="tmi-with__label">학교 협업</span>
+      </div>
+      <div class="tmi-with__item">
+        <span class="tmi-with__circle tmi-with__circle--lime">📚</span>
+        <span class="tmi-with__label">공공도서관 협업</span>
+      </div>
+      <div class="tmi-with__item">
+        <span class="tmi-with__circle tmi-with__circle--blue">🎤</span>
+        <span class="tmi-with__label">아티스트 후원<br />TXT 태현</span>
+      </div>
+      <div class="tmi-with__item">
+        <span class="tmi-with__circle tmi-with__circle--pink">🚉</span>
+        <span class="tmi-with__label">비수도권 청소년</span>
+      </div>
+      <div class="tmi-with__item">
+        <span class="tmi-with__circle tmi-with__circle--lime">🧭</span>
+        <span class="tmi-with__label">학교 밖 청소년</span>
+      </div>
     </div>
   </div>
 </section>
@@ -606,7 +641,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260826p"></script>
+<script src="script.js?v=20260826q"></script>
 <script>
 // 숫자 롤링 카운트업
 function animateCount(el) {
