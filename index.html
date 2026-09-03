@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 <link rel="stylesheet" href="https://resource.stibee.com/subscribe/stb_subscribe_form_style.css">
-<link rel="stylesheet" href="style.css?v=20260827j" />
+<link rel="stylesheet" href="style.css?v=20260827k" />
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
@@ -155,10 +155,10 @@
   <div class="container">
     <p class="stats__title reveal">숫자로 보는 변화</p>
     <div class="stats__grid">
-      <div class="stat reveal"><strong>74%</strong><span>한끗루틴 완주율 (10일 이상)</span></div>
-      <div class="stat reveal delay-1"><strong>95.6%</strong><span>한끗루틴 재참여 의향</span></div>
-      <div class="stat reveal delay-2"><strong>39.5%↓</strong><span>TMI 프로젝트 불안·우울 감소</span></div>
-      <div class="stat reveal delay-3"><strong>34.2%↑</strong><span>TMI 프로젝트 자기표현 향상</span></div>
+      <div class="stat reveal"><span class="stat__emoji">🔥</span><strong>74%</strong><span>한끗루틴 완주율 (10일 이상)</span></div>
+      <div class="stat reveal delay-1"><span class="stat__emoji">🔁</span><strong>95.6%</strong><span>한끗루틴 재참여 의향</span></div>
+      <div class="stat reveal delay-2"><span class="stat__emoji">😌</span><strong>39.5%↓</strong><span>TMI 프로젝트 불안·우울 감소</span></div>
+      <div class="stat reveal delay-3"><span class="stat__emoji">🎨</span><strong>34.2%↑</strong><span>TMI 프로젝트 자기표현 향상</span></div>
     </div>
   </div>
 </section>
@@ -276,16 +276,16 @@
       <h2 class="section__title">사회가 주목하는 유스보이스</h2>
     </div>
     <div class="cards cards--2">
-      <div class="card reveal">
+      <a href="https://www.kakaoimpact.org/news/view?atclId=64" target="_blank" rel="noopener" class="card reveal">
         <div class="card__img"><img src="assets/awards/award-fellow.jpg" alt="브라이언 임팩트 펠로우십 1기 김재순 대표" loading="lazy" /></div>
         <h3>브라이언(카카오) 임팩트 펠로우십 1기</h3>
         <p>브라이언임팩트재단이 주목한 교육혁신 — #교육혁신 #다음세대 #미디어</p>
-      </div>
-      <div class="card reveal delay-1">
+      </a>
+      <a href="https://www.kmib.co.kr/article/view.asp?arcid=0029522987" target="_blank" rel="noopener" class="card reveal delay-1">
         <div class="card__img"><img src="assets/awards/award-changemaker.jpeg" alt="제7회 대한민국 체인지메이커 시상식 교육 분야 수상" loading="lazy" /></div>
         <h3>제7회 대한민국 체인지메이커 '교육' 분야 수상</h3>
         <p>한국서부발전 · 한국사회복지협의회가 선정한 사회를 바꾸는 교육</p>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -453,6 +453,43 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260827j"></script>
+<script src="script.js?v=20260827k"></script>
+<script>
+// 숫자로 보는 변화: 롤링 카운트업
+function animateStatCount(el) {
+  const raw = el.textContent.trim();
+  const m = raw.match(/^([\d,]+(?:\.\d+)?)(.*)$/);
+  if (!m) return;
+  const numStr = m[1];
+  const suffix = m[2];
+  const isFloat = numStr.includes(".");
+  const hasComma = numStr.includes(",");
+  const target = parseFloat(numStr.replace(/,/g, ""));
+  const duration = 1100;
+  const start = performance.now();
+  function frame(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    const current = target * eased;
+    let display = isFloat ? current.toFixed(1) : Math.round(current).toString();
+    if (hasComma) display = Number(display).toLocaleString();
+    el.textContent = display + suffix;
+    if (p < 1) requestAnimationFrame(frame);
+    else el.textContent = raw;
+  }
+  requestAnimationFrame(frame);
+}
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const statCountObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateStatCount(entry.target);
+        statCountObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll(".stats__grid strong").forEach((el) => statCountObserver.observe(el));
+}
+</script>
 </body>
 </html>
