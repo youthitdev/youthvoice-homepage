@@ -487,10 +487,17 @@ a { color: inherit; text-decoration: none; }
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
-.cards--2 { grid-template-columns: repeat(2, 1fr); align-items: start; }
+.cards--2 {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 20px;
+}
 .cards--2 .card__img {
   aspect-ratio: auto;
-  height: 400px;
+  height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1103,7 +1110,7 @@ a { color: inherit; text-decoration: none; }
 
   .section, .donate { padding: 72px 0; }
   .programs, .cards, .joins { grid-template-columns: 1fr; }
-  .cards--2 .card__img { height: 320px; }
+  .cards--2 .card__img { height: 200px; }
   .process__step { gap: 18px; padding: 28px 0; }
   .process__marker::after { top: 51px; height: 26px; }
   .process__num { width: 36px; height: 36px; font-size: 12.5px; }
