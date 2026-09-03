@@ -494,7 +494,9 @@ a { color: inherit; text-decoration: none; }
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
-.cards--2 { grid-template-columns: repeat(2, 1fr); }
+.cards--2 { grid-template-columns: repeat(2, 1fr); align-items: start; }
+.cards--2 .card__img { aspect-ratio: auto; }
+.cards--2 .card__img img { height: auto; object-fit: contain; }
 .card { display: block; }
 .card__img {
   border-radius: var(--radius);
