@@ -294,17 +294,6 @@ a { color: inherit; text-decoration: none; }
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
 }
-.stats__cta {
-  text-align: center;
-  margin-top: 36px;
-}
-.stats__cta-link {
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--pink);
-  border-bottom: 2px solid var(--pink);
-  padding-bottom: 2px;
-}
 .stats__col {
   border-radius: var(--radius);
   padding: 36px 32px;
