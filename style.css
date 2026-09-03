@@ -488,11 +488,11 @@ a { color: inherit; text-decoration: none; }
   gap: 28px;
 }
 .cards--2 {
-  grid-template-columns: 1fr;
-  max-width: 720px;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1040px;
   margin-left: auto;
   margin-right: auto;
-  gap: 16px;
+  gap: 20px;
 }
 .cards--2 .card {
   display: flex;
