@@ -495,8 +495,15 @@ a { color: inherit; text-decoration: none; }
   gap: 28px;
 }
 .cards--2 { grid-template-columns: repeat(2, 1fr); align-items: start; }
-.cards--2 .card__img { aspect-ratio: auto; }
-.cards--2 .card__img img { height: auto; object-fit: contain; }
+.cards--2 .card__img {
+  aspect-ratio: auto;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-100);
+}
+.cards--2 .card__img img { width: auto; height: 100%; max-width: 100%; object-fit: contain; }
 .card { display: block; }
 .card__img {
   border-radius: var(--radius);
@@ -1103,6 +1110,7 @@ a { color: inherit; text-decoration: none; }
 
   .section, .donate { padding: 72px 0; }
   .programs, .cards, .joins { grid-template-columns: 1fr; }
+  .cards--2 .card__img { height: 320px; }
   .process__step { gap: 18px; padding: 28px 0; }
   .process__marker::after { top: 51px; height: 26px; }
   .process__num { width: 36px; height: 36px; font-size: 12.5px; }
