@@ -463,7 +463,8 @@ a { color: inherit; text-decoration: none; }
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
-.cards--2 { grid-template-columns: repeat(2, 1fr); max-width: 720px; }
+.cards--2 { grid-template-columns: repeat(2, 1fr); }
+.cards--2 .card__img { aspect-ratio: 16 / 9; }
 .card { display: block; }
 .card__img {
   border-radius: var(--radius);
