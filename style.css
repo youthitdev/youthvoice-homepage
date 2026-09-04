@@ -412,6 +412,7 @@ a { color: inherit; text-decoration: none; }
   flex: 0 0 auto;
   width: 326px;
   scroll-snap-align: start;
+  zoom: 0.72;
 }
 .insta-embed-item .instagram-media { margin: 0 !important; width: 100% !important; min-width: 0 !important; }
 .insta-follow {
