@@ -208,7 +208,13 @@ if (ycQuoteEl) {
 // 모바일 메뉴 토글
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.getElementById("nav");
-menuBtn.addEventListener("click", () => nav.classList.toggle("is-open"));
+menuBtn.addEventListener("click", () => {
+  nav.classList.toggle("is-open");
+  document.body.classList.toggle("nav-open", nav.classList.contains("is-open"));
+});
 nav.querySelectorAll("a").forEach((a) =>
-  a.addEventListener("click", () => nav.classList.remove("is-open"))
+  a.addEventListener("click", () => {
+    nav.classList.remove("is-open");
+    document.body.classList.remove("nav-open");
+  })
 );
