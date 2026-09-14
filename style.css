@@ -169,7 +169,7 @@ a { color: inherit; text-decoration: none; }
   justify-content: space-between;
   gap: 24px;
 }
-.header__logo img { height: 28px; width: auto; }
+.header__logo img { height: 34px; width: auto; }
 .header__nav {
   display: flex;
   gap: 36px;
