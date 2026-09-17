@@ -1161,7 +1161,8 @@ a { color: inherit; text-decoration: none; }
   .stat span { font-size: 12.5px; }
 
   .section, .donate { padding: 72px 0; }
-  .programs, .cards, .joins { grid-template-columns: 1fr; }
+  .programs, .cards { grid-template-columns: repeat(2, 1fr); }
+  .joins { grid-template-columns: 1fr; }
   .cards--2 .card { gap: 14px; padding: 12px; }
   .cards--2 .card__img { width: 88px; height: 88px; }
   .cards--2 .card h3 { font-size: 15px; }
@@ -1189,4 +1190,9 @@ a { color: inherit; text-decoration: none; }
   .footer__legal-cols { flex-direction: column; gap: 4px; }
   .footer__col-right { flex: none; align-items: flex-start; text-align: left; width: 100%; }
   .footer__links { align-items: flex-start; }
+}
+
+/* 900px대에서는 2열이지만, 진짜 좁은 화면(폰 세로)에서는 1열로 */
+@media (max-width: 640px) {
+  .programs, .cards { grid-template-columns: 1fr; }
 }
