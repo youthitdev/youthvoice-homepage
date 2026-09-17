@@ -455,7 +455,7 @@ a { color: inherit; text-decoration: none; }
 .program--pink { background: var(--pink-soft); }
 .program--blue { background: var(--blue-soft); }
 .program__img {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 .program__img img {
@@ -550,7 +550,7 @@ a { color: inherit; text-decoration: none; }
 .card__img {
   border-radius: var(--radius);
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   background: #fff;
   margin-bottom: 20px;
 }
@@ -1197,8 +1197,7 @@ a { color: inherit; text-decoration: none; }
   .programs, .cards { grid-template-columns: 1fr; }
 }
 
-/* 641~900px(창을 반으로 줄인 폭): 2열 카드의 이미지가 여전히 커 보여서 비율을 낮추고 여백도 줄임 */
+/* 641~900px(창을 반으로 줄인 폭): 2열 카드는 여백도 좀 더 줄임 */
 @media (min-width: 641px) and (max-width: 900px) {
-  .program__img, .card__img { aspect-ratio: 16 / 9; }
   .program__body { padding: 20px 20px 24px; }
 }
