@@ -167,6 +167,36 @@ async function loadReports() {
 
 if (document.getElementById("reportList")) loadReports();
 
+// ===== 인스타그램 최신 게시물 (index.html) =====
+// assets/instagram/instagram.json 수정만으로 업데이트 (최신 글이 배열 맨 앞)
+async function loadInstagram() {
+  const grid = document.getElementById("instaGrid");
+  try {
+    const res = await fetch("assets/instagram/instagram.json");
+    const items = await res.json();
+    const delays = ["", "delay-1", "delay-2", "delay-2"];
+    items.slice(0, 4).forEach((item, i) => {
+      const a = document.createElement("a");
+      a.href = item.url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.className = ["insta-item", "reveal", delays[i]].filter(Boolean).join(" ");
+
+      const img = document.createElement("img");
+      img.src = item.image;
+      img.alt = "유스보이스 인스타그램 게시물";
+      img.loading = "lazy";
+
+      a.appendChild(img);
+      grid.appendChild(a);
+      observer.observe(a);
+    });
+  } catch (err) {
+    console.error("인스타그램 게시물을 불러오지 못했어요:", err);
+  }
+}
+if (document.getElementById("instaGrid")) loadInstagram();
+
 // ===== Youth Creator 기금 페이지 — 어느 청소년의 첫 문장 (타이핑 효과) =====
 const ycQuoteEl = document.getElementById("ycQuote");
 if (ycQuoteEl) {
