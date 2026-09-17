@@ -1197,7 +1197,12 @@ a { color: inherit; text-decoration: none; }
   .programs, .cards { grid-template-columns: 1fr; }
 }
 
-/* 641~900px(창을 반으로 줄인 폭): 2열 카드는 여백도 좀 더 줄임 */
+/* 641~900px(창을 반으로 줄인 폭): 2열 카드는 여백도 좀 더 줄이고,
+   카드가 3개(2열 기준 홀수)일 땐 마지막 카드가 혼자 남아 옆에 빈 칸이 생기니 전체 폭으로 펼침 */
 @media (min-width: 641px) and (max-width: 900px) {
   .program__body { padding: 20px 20px 24px; }
+  .programs > :nth-child(3):last-child,
+  .cards > :nth-child(3):last-child {
+    grid-column: 1 / -1;
+  }
 }
