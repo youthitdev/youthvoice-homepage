@@ -1170,9 +1170,11 @@ a { color: inherit; text-decoration: none; }
   .hero { padding: 56px 0 64px; }
 
   .stats__cols { grid-template-columns: 1fr; gap: 40px; }
+  .stats__col { padding: 28px 18px; }
   .stats__grid { gap: 10px; }
-  .stat strong { font-size: 22px; }
-  .stat span { font-size: 12.5px; }
+  .stat__emoji { font-size: 20px; }
+  .stat strong { font-size: 18px; white-space: nowrap; }
+  .stat span { font-size: 11.5px; word-break: keep-all; }
 
   .section, .donate { padding: 72px 0; }
   .programs, .cards { grid-template-columns: repeat(2, 1fr); }
