@@ -6,33 +6,33 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://youthvoice.or.kr/routine.html</loc>
-    <lastmod>2026-08-24</lastmod>
+    <loc>https://youthvoice.or.kr/routine/</loc>
+    <lastmod>2026-09-23</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://youthvoice.or.kr/tmi.html</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://youthvoice.or.kr/tmi/</loc>
+    <lastmod>2026-09-23</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://youthvoice.or.kr/about.html</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://youthvoice.or.kr/about/</loc>
+    <lastmod>2026-09-23</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://youthvoice.or.kr/report.html</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://youthvoice.or.kr/report/</loc>
+    <lastmod>2026-09-23</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://youthvoice.or.kr/youth-creator.html</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://youthvoice.or.kr/youth-creator/</loc>
+    <lastmod>2026-09-23</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://youthvoice.or.kr/privacy.html</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://youthvoice.or.kr/privacy/</loc>
+    <lastmod>2026-09-23</lastmod>
     <priority>0.3</priority>
   </url>
 </urlset>
