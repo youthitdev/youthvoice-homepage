@@ -23,13 +23,19 @@
 <style>
 /* ===== 한끗루틴 페이지 전용 (라임, 습관·성장 무드) ===== */
 .routine-hero {
-  padding: 120px 0 100px;
-  text-align: center;
+  padding: 100px 0 90px;
   background:
-    radial-gradient(680px 440px at 50% -8%, var(--lime-soft) 0%, transparent 75%),
+    radial-gradient(680px 440px at 18% -10%, var(--lime-soft) 0%, transparent 75%),
     #fff;
 }
-.routine-hero__inner { max-width: 780px; margin: 0 auto; }
+.routine-hero__wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 52px;
+  align-items: center;
+  text-align: center;
+}
+.routine-hero__inner { max-width: 620px; margin: 0 auto; }
 .routine-hero h1 {
   font-size: clamp(36px, 4.8vw, 60px);
   font-weight: 800;
@@ -43,6 +49,42 @@
 }
 .routine-hero__desc { margin-top: 24px; font-size: 18px; color: var(--gray-600); }
 .routine-hero__cta { margin-top: 38px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+.routine-hero__photos { position: relative; width: 100%; height: 280px; max-width: 380px; margin: 0 auto; }
+.routine-hero__photos .polaroid {
+  position: absolute;
+  background: #fff;
+  padding: 10px 10px 38px;
+  border-radius: 14px;
+  box-shadow: 0 20px 45px -16px rgba(23, 33, 14, 0.28), 0 3px 10px rgba(23, 33, 14, 0.08);
+  width: 72%;
+}
+.routine-hero__photos .polaroid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+.routine-hero__photos .polaroid figcaption {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gray-600);
+  text-align: left;
+}
+.routine-hero__photos .polaroid--1 { top: 0; left: 0; transform: rotate(-6deg); z-index: 2; }
+.routine-hero__photos .polaroid--2 { bottom: 0; right: 0; width: 64%; transform: rotate(5deg); z-index: 1; }
+
+@media (min-width: 900px) {
+  .routine-hero__wrap { grid-template-columns: 1.05fr 0.95fr; gap: 48px; text-align: left; }
+  .routine-hero__inner { margin: 0; }
+  .routine-hero__cta { justify-content: flex-start; }
+  .routine-hero__photos { height: 360px; max-width: none; margin: 0; }
+}
 
 .routine-stats { padding: 64px 0; border-block: 1px solid var(--gray-100); }
 .routine-stats__grid {
@@ -303,16 +345,28 @@
 <main id="main">
 <!-- ===== Hero ===== -->
 <section class="routine-hero">
-  <div class="container routine-hero__inner">
-    <span class="pill pill--lime reveal">⏰ YOUTH-IT '한끗루틴'</span>
-    <h1 class="reveal delay-1">매일 한 끗씩,<br />나다움을 <em>찾아가는 시간</em></h1>
-    <p class="routine-hero__desc reveal delay-2">
-      학교 밖 청소년이 루틴을 만들고 서로 인증하며 성장하는 루틴 실천 플랫폼.<br class="pc-only" />
-      혼자보다 함께라서, 고립·은둔을 넘어 더 오래 지속돼요.
-    </p>
-    <div class="routine-hero__cta reveal delay-3">
-      <a href="https://youthitdev.github.io/youthit-routine/" target="_blank" rel="noopener" class="btn btn--dark">지금 시작하기</a>
-      <a href="#features" class="btn btn--ghost">기능 살펴보기</a>
+  <div class="container routine-hero__wrap">
+    <div class="routine-hero__inner">
+      <span class="pill pill--lime reveal">⏰ YOUTH-IT '한끗루틴'</span>
+      <h1 class="reveal delay-1">매일 한 끗씩,<br />나다움을 <em>찾아가는 시간</em></h1>
+      <p class="routine-hero__desc reveal delay-2">
+        학교 밖 청소년이 루틴을 만들고 서로 인증하며 성장하는 루틴 실천 플랫폼.<br class="pc-only" />
+        혼자보다 함께라서, 고립·은둔을 넘어 더 오래 지속돼요.
+      </p>
+      <div class="routine-hero__cta reveal delay-3">
+        <a href="https://youthitdev.github.io/youthit-routine/" target="_blank" rel="noopener" class="btn btn--dark">지금 시작하기</a>
+        <a href="#features" class="btn btn--ghost">기능 살펴보기</a>
+      </div>
+    </div>
+    <div class="routine-hero__photos reveal delay-2">
+      <figure class="polaroid polaroid--1">
+        <img src="/assets/programs/program-routine.jpg" alt="한끗루틴 온라인 오리엔테이션 현장" loading="lazy" />
+        <figcaption>오리엔테이션 현장</figcaption>
+      </figure>
+      <figure class="polaroid polaroid--2">
+        <img src="/assets/routine/routine-tracking.jpg" alt="참여자가 실제로 인증한 루틴 기록" loading="lazy" />
+        <figcaption>실제 인증 루틴</figcaption>
+      </figure>
     </div>
   </div>
 </section>
