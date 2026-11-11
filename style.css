@@ -194,11 +194,11 @@ a { color: inherit; text-decoration: none; }
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--gray-100);
-  color: var(--ink);
+  background: #dcebb8;
+  color: var(--lime-dark);
   transition: background 0.2s, color 0.2s;
 }
-.header__social:hover { background: var(--lime-soft); color: var(--lime-dark); }
+.header__social:hover { background: #cde3a0; color: var(--lime-dark); }
 .header__actions .btn { white-space: nowrap; flex-shrink: 0; }
 @media (max-width: 420px) {
   .header__actions { gap: 8px; }
