@@ -187,6 +187,26 @@ a { color: inherit; text-decoration: none; }
 }
 .header__nav a:hover::after { right: 0; }
 .header__actions { display: flex; align-items: center; gap: 12px; }
+.header__social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gray-100);
+  color: var(--ink);
+  transition: background 0.2s, color 0.2s;
+}
+.header__social:hover { background: var(--lime-soft); color: var(--lime-dark); }
+.header__actions .btn { white-space: nowrap; flex-shrink: 0; }
+@media (max-width: 420px) {
+  .header__actions { gap: 8px; }
+  .header__social { width: 32px; height: 32px; }
+}
+@media (max-width: 340px) {
+  .header__social { display: none; }
+}
 
 /* 헤더 드롭다운 (단체소개 > 소개 / 사업보고) */
 .nav-drop { position: relative; display: flex; align-items: center; }
