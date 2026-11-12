@@ -106,6 +106,20 @@
 .gath-gallery { margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .gath-gallery img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 18px; }
 
+.gath-blog { margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.gath-post { display: flex; flex-direction: column; background: #fff; border: 1.5px solid var(--gray-100); border-radius: var(--radius); overflow: hidden; transition: border-color 0.25s, transform 0.25s; }
+.gath-post:hover { border-color: var(--blue); transform: translateY(-4px); }
+.gath-post img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center top; }
+.gath-post__body { display: flex; flex-direction: column; flex: 1; padding: 22px 24px 26px; }
+.gath-post h3 { font-size: 17px; font-weight: 800; line-height: 1.45; letter-spacing: -0.02em; word-break: keep-all; }
+.gath-post__link { margin-top: auto; padding-top: 18px; font-size: 14px; font-weight: 800; color: var(--blue); }
+.gath-post--more { background: var(--blue-soft); border-color: transparent; align-items: center; justify-content: center; text-align: center; padding: 36px 28px; }
+.gath-post--more:hover { border-color: var(--blue); }
+.gath-post--more img { width: 84px; height: 84px; aspect-ratio: auto; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 8px 20px rgba(23, 33, 14, 0.12); object-position: center; }
+.gath-post--more h3 { margin-top: 18px; }
+.gath-post--more p { margin-top: 8px; font-size: 14.5px; color: var(--gray-600); word-break: keep-all; }
+.gath-post--more .gath-post__link { margin-top: 22px; padding-top: 0; }
+
 @media (min-width: 900px) {
   .gath-hero__wrap { grid-template-columns: 1.05fr 0.95fr; gap: 56px; }
 }
@@ -114,6 +128,7 @@
   .gath-steps { grid-template-columns: 1fr; }
   .gath-quotes { grid-template-columns: 1fr; }
   .gath-gallery { grid-template-columns: 1fr; }
+  .gath-blog { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
   .gath-stats__grid { grid-template-columns: 1fr; gap: 28px; }
@@ -293,6 +308,38 @@
       <img class="reveal" src="/assets/gathering/gathering-2.jpg" alt="소모임을 마치고 하트 포즈로 함께 사진을 찍은 청소년들" loading="lazy" />
       <img class="reveal delay-1" src="/assets/gathering/gathering-3.jpg" alt="출판 소모임에서 책 출판 과정을 발표하는 청소년들" loading="lazy" style="object-position: 62% center;" />
       <img class="reveal delay-2" src="/assets/gathering/gathering-4.jpg" alt="테이블에 둘러앉아 함께 활동하는 소모임 참여자들" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- ===== 소모임 이야기 (블로그) ===== -->
+<section class="section" id="blog" style="padding-top:20px;">
+  <div class="container">
+    <span class="pill pill--blue reveal">BLOG</span>
+    <div class="section__head reveal">
+      <h2 class="section__title">소모임 이야기</h2>
+    </div>
+    <div class="gath-blog">
+      <a class="gath-post reveal" href="https://blog.naver.com/youthvoice_my/224447961038" target="_blank" rel="noopener">
+        <img src="/assets/gathering/blog-1.jpg" alt="출판소모임 출간 기념 북토크 포스터" loading="lazy" />
+        <div class="gath-post__body">
+          <h3>[출판소모임] 출간 기념 북토크 현장 스케치📖</h3>
+          <span class="gath-post__link">블로그에서 읽기 →</span>
+        </div>
+      </a>
+      <a class="gath-post reveal delay-1" href="https://blog.naver.com/youthvoice_my/224285440830" target="_blank" rel="noopener">
+        <img src="/assets/gathering/blog-2.jpg" alt="5월 1회기 월간소모임 통합 오프닝에서 하트 포즈를 취한 참여자들" loading="lazy" />
+        <div class="gath-post__body">
+          <h3>[월간소모임] 학교 밖 청소년들과 함께한 5월 소모임 통합 오프닝 현장 스케치</h3>
+          <span class="gath-post__link">블로그에서 읽기 →</span>
+        </div>
+      </a>
+      <a class="gath-post gath-post--more reveal delay-2" href="https://blog.naver.com/youthvoice_my" target="_blank" rel="noopener">
+        <img src="/assets/gathering/blog-profile.png" alt="유스보이스 블로그 프로필" loading="lazy" />
+        <h3>유스보이스 블로그</h3>
+        <p>유스보이스의 일상, 행사와 프로젝트 비하인드 스토리를 만나보세요.</p>
+        <span class="gath-post__link">블로그에서 더 보기 →</span>
+      </a>
     </div>
   </div>
 </section>
