@@ -50,11 +50,10 @@
   font-style: normal;
   background: linear-gradient(transparent 58%, rgba(61, 61, 200, 0.18) 58%);
 }
-.gath-meaning { margin-top: 30px; padding: 22px 24px; border-radius: var(--radius); background: var(--blue-soft); }
-.gath-meaning strong { display: block; font-size: 13px; font-weight: 800; letter-spacing: 0.04em; color: var(--blue); }
-.gath-meaning p { margin-top: 8px; font-size: 16px; color: var(--gray-600); word-break: keep-all; }
+.gath-q { margin-top: 22px; font-size: clamp(20px, 2.2vw, 26px); font-weight: 800; letter-spacing: -0.02em; color: var(--blue); }
+.gath-hero h1 { margin-top: 8px; }
 
-.gath-bracket { background: var(--blue-soft); border-radius: 28px; padding: 48px 24px 36px; text-align: center; }
+.gath-bracket { background: var(--blue-soft); border-radius: 28px; padding: 64px 24px; text-align: center; }
 .gath-bracket__line {
   display: flex;
   align-items: baseline;
@@ -77,9 +76,6 @@
   transition: opacity 0.45s ease, transform 0.45s ease;
 }
 .gath-bracket__words span.is-on { opacity: 1; transform: none; }
-.gath-bracket__cap { margin-top: 30px; font-size: 14px; color: var(--gray-600); }
-.gath-bracket__chips { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-.gath-bracket__chips span { background: #fff; color: var(--blue); font-size: 14px; font-weight: 700; padding: 7px 14px; border-radius: 999px; }
 
 .gath-why { margin-top: 44px; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; }
 .gath-why__text p { font-size: 18px; line-height: 1.85; word-break: keep-all; }
@@ -193,24 +189,19 @@
 <section class="gath-hero">
   <div class="container gath-hero__wrap">
     <div>
-      <span class="pill pill--blue reveal">💬 YOUTH-IT '[ ] 소모임'</span>
-      <h1 class="reveal delay-1" style="margin-top:20px;">학교 밖 청소년의 <em>관심사와 취향</em>으로 채워지는 오프라인 소모임</h1>
-      <div class="gath-meaning reveal delay-2">
-        <strong>이름의 의미</strong>
-        <p>빈칸 [ ]은 정해진 틀 없이 청소년들의 취향 및 관심사, 원하는 주제와 방식에 따라 무엇이든 담길 수 있는 열린 가능성을 의미합니다.</p>
-      </div>
+      <span class="pill pill--blue reveal">💬 YOUTH-IT '[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] 소모임'</span>
+      <p class="gath-q reveal delay-1">[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] 소모임은?</p>
+      <h1 class="reveal delay-2">학교 밖 청소년의 <em>관심사와 취향</em>으로 채워지는 오프라인 소모임</h1>
     </div>
     <div class="gath-bracket reveal delay-2">
       <div class="gath-bracket__line" aria-hidden="true">
         <span class="gath-bracket__b">[</span>
         <span class="gath-bracket__words" id="gathWords">
-          <span class="is-on">출판</span><span>취향 공유</span><span>월간</span>
+          <span class="is-on">출판</span><span>문학</span><span>사진</span><span>보드게임</span><span>런닝</span>
         </span>
         <span class="gath-bracket__b">]</span>
         <span>소모임</span>
       </div>
-      <p class="gath-bracket__cap">지금까지 이런 소모임을 열었어요</p>
-      <div class="gath-bracket__chips"><span>[월간] 소모임</span><span>[취향 공유] 소모임</span><span>[출판] 소모임</span></div>
     </div>
   </div>
 </section>
@@ -225,7 +216,7 @@
     <div class="gath-why">
       <div class="gath-why__text reveal">
         <p>학교 밖 청소년에게는 공통의 취향과 관심사를 편안하게 나눌 수 있는 관계가 필요합니다.</p>
-        <p>[ ] 소모임은 또래, 선배, 멘토와 긴밀히 교류하며 학교를 나온 후의 단절감과 사회적 고립감을 해소하고 심리적 안정감을 느낄 수 있도록 시작되었습니다.</p>
+        <p>[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] 소모임은 또래, 선배, 멘토와 긴밀히 교류하며 학교를 나온 후의 단절감과 사회적 고립감을 해소하고 심리적 안정감을 느낄 수 있도록 시작되었습니다.</p>
         <p>공통의 관심사 안에서 긍정적인 관계를 다지고, 나아가 장기적인 자립과 사회 참여로 이어지는 든든한 기반을 만들어갑니다.</p>
       </div>
       <div class="gath-why__photo reveal delay-1">
@@ -241,13 +232,13 @@
     <span class="pill pill--blue reveal">HOW IT WORKS</span>
     <div class="section__head reveal">
       <h2 class="section__title">이렇게 진행돼요</h2>
-      <p class="section__sub">[ ] 소모임은 [ ]에 들어가는 내용에 따라 운영 방식과 형태가 자유롭게 변합니다.<br class="pc-only" />주제와 활동 목적에 어울리는 최적의 방식으로 새롭게 기획·운영됩니다.</p>
+      <p class="section__sub">[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] 소모임은 [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]에 들어가는 내용에 따라 운영 방식과 형태가 자유롭게 변합니다.<br class="pc-only" />주제와 활동 목적에 어울리는 최적의 방식으로 새롭게 기획·운영됩니다.</p>
     </div>
     <div class="gath-steps">
       <div class="gath-step reveal">
         <span class="gath-step__num">1</span>
         <h3>소모임 기획</h3>
-        <p>청소년들의 관심사와 취향을 반영해 이번 달 [ ] 주제와 운영 형태를 결정해요.</p>
+        <p>청소년들의 관심사와 취향을 반영해 이번 달 [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] 주제와 운영 형태를 결정해요.</p>
       </div>
       <div class="gath-step reveal delay-1">
         <span class="gath-step__num">2</span>
