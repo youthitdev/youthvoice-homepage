@@ -38,7 +38,7 @@
     radial-gradient(700px 460px at 85% -8%, var(--blue-soft) 0%, transparent 72%),
     #fff;
 }
-.gath-hero__wrap { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+.gath-hero__wrap { margin-top: 22px; display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
 .gath-hero h1 {
   font-size: clamp(32px, 4.4vw, 54px);
   font-weight: 800;
@@ -50,7 +50,7 @@
   font-style: normal;
   background: linear-gradient(transparent 58%, rgba(61, 61, 200, 0.18) 58%);
 }
-.gath-q { margin-top: 22px; font-size: clamp(20px, 2.2vw, 26px); font-weight: 800; letter-spacing: -0.02em; color: var(--blue); }
+.gath-q { margin-top: 0; font-size: clamp(20px, 2.2vw, 26px); font-weight: 800; letter-spacing: -0.02em; color: var(--blue); }
 .gath-hero h1 { margin-top: 8px; }
 
 .gath-bracket { background: var(--blue-soft); border-radius: 28px; padding: 64px 24px; text-align: center; }
@@ -187,9 +187,10 @@
 <main id="main">
 <!-- ===== Hero ===== -->
 <section class="gath-hero">
-  <div class="container gath-hero__wrap">
+  <div class="container">
+    <span class="pill pill--blue reveal">💬 YOUTH-IT '[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] 소모임'</span>
+    <div class="gath-hero__wrap">
     <div>
-      <span class="pill pill--blue reveal">💬 YOUTH-IT '[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] 소모임'</span>
       <p class="gath-q reveal delay-1">[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] 소모임은?</p>
       <h1 class="reveal delay-2">학교 밖 청소년의 <em>관심사와 취향</em>으로 채워지는 오프라인 소모임</h1>
     </div>
@@ -202,6 +203,7 @@
         <span class="gath-bracket__b">]</span>
         <span>소모임</span>
       </div>
+    </div>
     </div>
   </div>
 </section>
