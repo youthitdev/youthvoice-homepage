@@ -48,6 +48,20 @@
 }
 .gath-hl { white-space: nowrap; }
 .gath-br { color: var(--blue); font-weight: 300; padding: 0 0.04em; }
+.gath-hero h1 em.gath-type { background: none; }
+.gath-type__typed { background: linear-gradient(transparent 58%, rgba(61, 61, 200, 0.18) 58%); }
+.gath-type__rest { visibility: hidden; }
+.gath-type.is-typing .gath-type__typed::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0.86em;
+  margin-right: -2px;
+  border-right: 2px solid var(--blue);
+  vertical-align: -0.1em;
+  animation: gath-caret 0.7s steps(1) infinite;
+}
+@keyframes gath-caret { 50% { border-right-color: transparent; } }
 .gath-hero h1 em {
   font-style: normal;
   white-space: nowrap;
@@ -206,7 +220,7 @@
     <span class="pill pill--blue reveal">💬 YOUTH-IT '[<span class="gath-blank"></span>] 소모임'</span>
     <div class="gath-hero__wrap">
     <div>
-      <h1 class="reveal delay-1">학교 밖 청소년의<br class="pc-only" /> <span class="gath-hl"><span class="gath-br">[</span><em>관심사와 취향</em><span class="gath-br">]</span></span>으로 채워지는<br class="pc-only" /> 오프라인 소모임</h1>
+      <h1 class="reveal delay-1" aria-label="학교 밖 청소년의 [관심사와 취향]으로 채워지는 오프라인 소모임">학교 밖 청소년의<br class="pc-only" /> <span class="gath-hl"><span class="gath-br">[</span><em class="gath-type"><span class="gath-type__typed">관심사와 취향</span><span class="gath-type__rest" aria-hidden="true"></span></em><span class="gath-br">]</span></span>으로 채워지는<br class="pc-only" /> 오프라인 소모임</h1>
     </div>
     <div class="gath-bracket reveal delay-2">
       <div class="gath-bracket__line" aria-hidden="true">
@@ -396,6 +410,27 @@
 
 <script src="/script.js?v=2026091807"></script>
 <script>
+// 제목 '관심사와 취향' 타자기 효과 (한 번만)
+(function () {
+  const em = document.querySelector(".gath-type");
+  if (!em || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const typed = em.querySelector(".gath-type__typed");
+  const rest = em.querySelector(".gath-type__rest");
+  const full = typed.textContent;
+  let i = 0;
+  typed.textContent = "";
+  rest.textContent = full;
+  em.classList.add("is-typing");
+  function step() {
+    i += 1;
+    typed.textContent = full.slice(0, i);
+    rest.textContent = full.slice(i);
+    if (i < full.length) setTimeout(step, 110);
+    else setTimeout(() => em.classList.remove("is-typing"), 700);
+  }
+  setTimeout(step, 900);
+})();
+
 // 대괄호 안 단어 순환
 (function () {
   const words = document.querySelectorAll("#gathWords span");
